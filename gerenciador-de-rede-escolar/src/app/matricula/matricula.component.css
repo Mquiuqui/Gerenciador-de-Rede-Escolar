@@ -1,3 +1,16 @@
+
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+
 span {
     font-size: 17px;
     font-weight: 700;
@@ -50,6 +63,15 @@ span {
   
   #ButtonFinalizar{
       margin-left: 35%;
+      color: white;
+      margin-top: 10%;
+      margin-left: 50%;
+      background: var(--main-cinza-button);
+      font-weight: 700;
+      font-size: 18px;
+      border-radius: 15px;
+      padding: 10px 20px 10px 20px;
+      cursor: pointer;
   }
   
   div{
