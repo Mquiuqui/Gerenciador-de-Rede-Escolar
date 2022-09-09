@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccountService } from 'src/app/core/auth/auth.account.service';
 import { environment } from 'src/environments/environment.prod';
 // import { UserLogin } from '../model/UserLogin';
 // import { AlertasService } from '../service/alertas.service';
@@ -14,8 +15,11 @@ export class LoginComponent implements OnInit {
 
   // userLogin: UserLogin = new UserLogin
 
-  constructor(
+  user: { username: string, senha: string } = { username: '', senha: '' }
+  typeInput: 'password' | 'text' = 'password'
 
+  constructor(
+    private accountService: AccountService,
     private router: Router,
     //private alerta: AlertasService
   ) { }
@@ -24,8 +28,15 @@ export class LoginComponent implements OnInit {
     window.scroll(0,0)
   }
 
-  login(){
-    this.router.navigate(['/'])
-  }
+  async submit() {
+
+    if (!this.user.username || !this.user.senha) console.log("teste")
+
+    const user = await this.accountService.login(this.user.username, this.user.senha)
+    if (!user) console.log("Usuário não encontrado ou não registrado", 'error');
+    else {
+      this.router.navigate(['home'])
+    }
+}
 
 }
