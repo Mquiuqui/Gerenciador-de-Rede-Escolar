@@ -1,5 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --main-cinza: #bdc3c7;
+  --main-cinza-background: #e0e6e9;
+  --main-cinza-escuro: #C4C4C4;
+  --main-cinza-button: #474545;
+  --main-font-principal: "Roboto Flex", sans-serif;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+* {
+  background-color: var(--main-cinza-background);
+  font-family: var(--main-font-principal);
+  border: 0cm;
+}
+
+#ButtonFinalizar {
+  color: white;
+  margin-top: 10%;
+  margin-left: 50%;
+  background: var(--main-cinza-button);
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 15px;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+}
+
+
 html{
     scroll-behavior: smooth;
 }

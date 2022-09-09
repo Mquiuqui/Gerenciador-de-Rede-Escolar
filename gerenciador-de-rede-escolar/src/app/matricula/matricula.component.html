@@ -1,0 +1,83 @@
+
+  <body class="center">
+    <h2>Matricula</h2>
+    <div>
+      <form>
+
+        <!--Nome -->
+        <div>
+          <span>Nome completo: </span>
+          <input type="text" placeholder="Digite o nome completo"/>
+        </div>
+
+        <!--E-mail -->
+        <div>
+            <span>E-mail: </span>
+            <input type="text" placeholder="E-mail"/>
+        </div>
+
+        <!--RG-->
+        <div>
+            <span>RG: </span>
+            <input
+                type="text"
+                name="RG"
+                pattern="\d{2}\.\d{3}\.\d{3}-\d{1}"
+                title="Digite um RG no formato: xx.xxx.xxx-x"
+                placeholder="RG -  xx.xxx.xxx-x"
+            />
+        </div>
+
+        <!--CPF-->
+        <div>
+            <span>CPF: </span>
+            <input
+                type="text"
+                name="CPF"
+                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                title="Digite um CPF no formato: xxx.xxx.xxx-xx"
+                placeholder="CPF -  xxx.xxx.xxx-xx"
+            />
+        </div>
+
+        <!--Endereço-->      
+        <div>
+            <span>Endereço: </span><br>
+            <input type="text" placeholder="Endereço" id="excecao75"/>
+            <input type="number" placeholder="Número" id="excecao25"/>
+        </div>
+
+        <!--Sexo-->
+        <div>
+            <span>Sexo: </span>         
+            <select>
+                <option></option>
+                <option>Masculino</option>
+                <option>Feminimo</option>
+                <option>Não-Binário</option>
+            </select>
+        </div>
+
+        <!--Hitórico Escolar-->
+        <div>
+            <span>Hitórico Escolar: </span>         
+            <button type="file" id="ButtonAnexar"> Anexar </button>
+        </div>
+
+        <!--Comprovante de residencia-->
+        <div>
+            <span>Comprovante de residencia: </span>         
+            <button type="file" id="ButtonAnexar"> Anexar </button>
+        </div>
+
+        <!--Comprovante de renda-->
+        <div>
+            <span>Comprovante de renda: </span>         
+            <button type="file" id="ButtonAnexar"> Anexar </button>
+        </div>
+
+        <!--Botão de enviar-->
+        <button type="submit" id="ButtonFinalizar">CADASTRAR</button>
+      </form> 
+    </div>
+  </body>

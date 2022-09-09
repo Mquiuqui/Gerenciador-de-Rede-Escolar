@@ -8,12 +8,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CadastroUeComponent } from './cadastro-ue/cadastro-ue.component';
+import { CadastrosComponent } from './cadastros/cadastros.component';
+import { MatriculaComponent } from './matricula/matricula.component';
+import { VisualizarBoletosComponent } from './visualizar-boletos/visualizar-boletos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CadastroUeComponent,
+    CadastrosComponent,
+    MatriculaComponent,
+    VisualizarBoletosComponent
   ],
   imports: [
     BrowserModule,
