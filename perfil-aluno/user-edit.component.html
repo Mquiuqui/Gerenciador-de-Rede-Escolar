@@ -1,0 +1,78 @@
+<body>
+  <div class="container fundo">
+
+    <div class="row d-flex">
+      <div class="col-md-4">
+        <div class="card border-0">
+          <div class="card-body">
+
+            <div class="form-group">
+              <div class="inicio text-center">
+                <img src="{{foto}}" class="img-fluid rounded-circle" alt="Foto usuário">
+              </div>
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-6 d-flex justify-content-center">
+                  <div class="d-flex align-items-center flex-column mb-2">
+                    <h4 class="text-center">{{user.nome}}</h4>
+                    <h6 class="text-center">RGM</h6>
+                    <h6>{{user.dataNascimento}}</h6>
+                    <h6 class="text-center">{{user.login}}</h6>
+                    <h6 class="text-center">Telefone</h6>
+                    <h6 class="text-center">Curso</h6>
+                    <h6 class="text-center">Turma</h6>
+                    <h6 class="text-center">Período</h6>
+                    <h6 class="text-center">Campus</h6>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-success">Editar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row d-flex">
+      <div class="col-md-6">
+        <div class="card border-0">
+          <div class="card-body">
+
+
+            <div class="col-md-12">
+              <h4 class="card-title mt-4">Ocorrencias</h4>
+
+              <button *ngIf='authService.adm()' class="text-info mr-3" href="">Editar</button>
+              <button *ngIf='authService.adm()' class="text-danger" href="">Apagar</button>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-0">
+          <div class="card-body">
+
+
+            <div class="col-md-12">
+              <h4 class="card-title mt-4">Multas</h4>
+
+              <button *ngIf='authService.adm()' class="text-info mr-3" href="">Editar</button>
+              <button *ngIf='authService.adm()' class="text-danger" href="">Apagar</button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    </div>
+
+</body>

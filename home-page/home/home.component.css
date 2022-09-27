@@ -1,0 +1,78 @@
+body{
+  background-color: #DBEDF4;
+    background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background-size: 100% auto;
+}
+
+.btn-carrossel{
+  color: #ffff;
+  background-color: #03658C;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+}
+
+.btn-carrossel:hover{
+  background-color: #ffffff;
+  box-shadow: #000 0px 1px 10px;
+  transition: .2s ease;
+  color: #000;
+}
+.btn-logar{
+  color: #ffff;
+  background-color: #03658C;
+  border: none;
+}
+
+.carousel{
+  background-color: hsla(0, 0%, 100%, 0);
+}
+.carousel h4{
+  color: #000;
+}
+#myCarousel img{
+  width: 100vh !important;
+
+}
+.container .categoria-lista{
+  text-align: center !important;
+  display: flex !important;
+  list-style: none;
+  margin: 10px;
+  justify-content: space-evenly;
+}
+.categoria-lista ul li{
+  text-decoration: none !important;
+}
+.card-body .card-contents{
+  background-color: #03658C;
+}
+
+.card-body .img-customer{
+  width: 90px !important;
+  height: 90px !important;
+}
+
+.card-text{
+  text-align: center;
+}
+.features-overview{
+  margin-bottom: 150px !important;
+}
+.areas{
+  margin-bottom: 150px !important;
+}
+.relatos{
+  margin-bottom: 150px !important;
+}
+
+
+p{
+  text-align: center !important;
+  text-align: justify !important;
+}
+
+

@@ -1,0 +1,33 @@
+h1{
+  margin-top: 10px;
+}
+form .form-control{
+  border-radius: 50px;
+}
+body{
+  background: #ffffff;
+}
+label{
+  color: #fff;
+}
+
+.fundo{
+  background-color: #ffffff;
+}
+
+img{
+  margin-top: 20px !important;
+  margin-bottom: 20px;
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.card{
+  display: flex;
+  box-shadow: #000 0px 0px 10px;
+  margin-bottom: 20px;
+}
+.card .card-body{
+  background-color: #495b6d;
+  color: #f3f4f7;
+}
