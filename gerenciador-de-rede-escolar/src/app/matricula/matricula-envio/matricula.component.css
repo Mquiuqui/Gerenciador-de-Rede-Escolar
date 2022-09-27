@@ -1,0 +1,79 @@
+
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+
+span {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+  
+  #ButtonAnexar {
+    background: var(--main-cinza-escuro);
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+  }
+  
+  input {
+    border: 0cm;
+    width: 100%;
+    height: 23px;
+    padding: 0.1cm;
+    background-color: var(--main-cinza-escuro);
+    font-family: var(--main-font-principal);
+    font-size: 15px;
+    font-style: italic;
+    border-radius: 15px;
+  }
+  
+  #reparo {
+    width: 100%;
+  }
+  
+  #excecao75 {
+    width: 55%;
+  }
+  
+  #excecao25 {
+    width: 39%;
+  }
+  
+  select {
+    width: 45%;
+    border: 0cm;
+    height: 25px;
+    padding: 0.1cm;
+    background-color: var(--main-cinza-escuro);
+    font-family: var(--main-font-principal);
+    font-size: 15px;
+    font-style: italic;
+    border-radius: 15px;
+  }
+  
+  #ButtonFinalizar{
+      margin-left: 35%;
+      color: white;
+      margin-top: 10%;
+      margin-left: 50%;
+      background: var(--main-cinza-button);
+      font-weight: 700;
+      font-size: 18px;
+      border-radius: 15px;
+      padding: 10px 20px 10px 20px;
+      cursor: pointer;
+  }
+  
+  div{
+      padding: 2px 0px 2px 0px;
+  }
