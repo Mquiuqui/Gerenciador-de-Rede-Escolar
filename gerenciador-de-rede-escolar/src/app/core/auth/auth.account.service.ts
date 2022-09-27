@@ -67,7 +67,7 @@ export class AccountService {
 
         localStorage.removeItem('user')
         this.userSubject.next(null)
-        this.router.navigate(['/login'])
+        this.router.navigate(['/'])
 
     }
 

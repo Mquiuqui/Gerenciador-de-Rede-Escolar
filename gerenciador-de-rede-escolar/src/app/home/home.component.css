@@ -1,125 +1,203 @@
-@charset "UTF-8";
+/*
+    DEMO STYLE
+*/
 
-@font-face {
-    font-family: 'Sora';
-    src: url('../../assets/Sora-VariableFont_wght.ttf') format('truetype');
-}
-
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-    background-color: #ecf0f1;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
 }
 
-img {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 200px;
-    border-radius: 100%;
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
 }
 
-div,button {
-    font-family: 'Sora', sans-serif;;
-}
-
-div#text-container {
-    background-color: #c4c4c4;
-    min-width: 315px;
-    max-width: 1000px;
-}
-
-div#text-container > h1 {
-    font-size: 1.3em;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 15px;
-}
-
-div#text-container > p {
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 25px;
-}
-
-div#text-container > p > a {
-    background-color: gray;
-    color: white;
+a,
+a:hover,
+a:focus {
+    color: inherit;
     text-decoration: none;
-    padding: 10px 30px;
-    border-radius: 10px;
+    transition: all 0.3s;
 }
 
-div#text-container > p > a:hover {
-    color: lightskyblue;
-}
-
-.logout{
-    margin-top: 10px;
-    text-align: center;
-    width: 35%;
-    height: 38px;
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
     border: none;
-    background-color: gray;
-    border-radius: 15px;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.logout > label {
-    background-color: gray;
-    color: white;
-    margin-top: 8px;
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
 }
 
-.visualizar{
-    background-color: gray;
-    color: white;
-    margin: 0;
-    text-decoration: none;
-    padding: 10px 10px;
-    border-radius: 10px;
-    font-size: 16px;
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
 }
 
-h2 {
-    font-size: 2em;
-    font-weight: lighter;
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
 }
 
-h2.destaque {
-    display: inline-block;
-    background-color: #c4c4c4;
-    padding: 3px 3px;
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
 }
 
-#aluno-section {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: #c4c4c4;
-    padding-bottom: 75%;
+#sidebar.active {
+    margin-left: -250px;
 }
 
-#financeiro-section{
-    font-size: 9px;
-    padding-right: 40%;
-    padding-top: 5%;
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
 }
 
-.financeiro {
-    font-size: 9px;
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
     text-align: center;
-    padding-bottom: 25%;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
-.ocorrencias {
-    font-size: 9px;
-    padding-bottom: 20%;
+a.download {
+    background: #fff;
+    color: #7386D5;
 }
-.multas {
-    font-size: 9px;
-    padding-bottom: 20%;
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+h1{
+    margin-top: 10px;
+  }
+  form .form-control{
+    border-radius: 50px;
+  }
+  body{
+    background: #ffffff;
+  }
+  label{
+    color: #fff;
+  }
+  
+  .fundo{
+    background-color: #ffffff;
+  }
+  
+  img{
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .card{
+    display: flex;
+    box-shadow: #000 0px 0px 10px;
+    margin-bottom: 20px;
+  }
+  .card .card-body{
+    background-color: #495b6d;
+    color: #f3f4f7;
+  }
+  
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
 }

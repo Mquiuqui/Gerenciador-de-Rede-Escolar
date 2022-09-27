@@ -12,6 +12,7 @@ import { CadastroUeComponent } from './cadastro-ue/cadastro-ue.component';
 import { CadastrosComponent } from './cadastros/cadastros.component';
 import { MatriculaComponent } from './matricula/matricula.component';
 import { VisualizarBoletosComponent } from './visualizar-boletos/visualizar-boletos.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VisualizarBoletosComponent } from './visualizar-boletos/visualizar-bole
     CadastroUeComponent,
     CadastrosComponent,
     MatriculaComponent,
-    VisualizarBoletosComponent
+    VisualizarBoletosComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

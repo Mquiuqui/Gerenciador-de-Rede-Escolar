@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { CadastroUeComponent } from './cadastro-ue/cadastro-ue.component';
 import { CadastrosComponent } from './cadastros/cadastros.component';
 import { HomeComponent } from './home/home.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { MatriculaComponent } from './matricula/matricula.component';
 import { VisualizarBoletosComponent } from './visualizar-boletos/visualizar-boletos.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
+  {path:'', component: LandingPageComponent},
   {path:'home', component: HomeComponent, canActivate:[AuthGuard]},
 
 

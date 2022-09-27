@@ -1,66 +1,79 @@
-<body>
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
 
-  <div id="aluno-section">
-    <div id="img-container">
-      <img src="../../assets/aluno.jpg" alt="Imagem de perfil">
-    </div>
-    <div id="text-container">
-      <h1>Nome Sobrenome</h1>
-      <p>RGM: 12345678</p>
-      <p>E-mail: aluno@aluno.com</p>
-      <p>Telefone: (11) 12345-6789</p>
-      <p>Curso: Tecnico em Informática</p>
-      <p>Turma: 3B</p>
-      <p>Período: Noturno</p>
-      <p>CEP: 00000-000</p>
-      <p>Endereço: Rua Cruzeiro do Sul, 10.</p>
+    <div class="card-body">
 
-      <p style="padding-top: 10px; padding-bottom: 10px;">
-        <a href="#">EDITAR</a>
-      </p>
-      <!-- <div>
-        <button class="logout" (click)="this.logout()">
-          <label>SAIR</label>
-        </button>
-      </div> -->
-      <p (click)="this.logout()" style="padding-top: 10px; padding-bottom: 10px;">
-        <a>Sair</a>
-      </p>
+      <div class="form-group">
+        <div class="inicio text-center">
+          <img src="../../assets/img/aluno.jpg" class="img-fluid rounded-circle" alt="Foto usuário">
+        </div>
 
-      <p style="margin-top: 10px;padding-top: 10px; padding-bottom: 10px;">
-        <a href="/matricula">Matricula</a>
-      </p>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6 d-flex justify-content-center">
+            <div class="d-flex align-items-center flex-column mb-2">
 
-      <p style="padding-top: 10px; padding-bottom: 10px;">
-        <a href="/cadastros">Cadastro</a>
-      </p>
+              <h6 class="text-center">RGM</h6>
 
-      <p style="padding-top: 10px; padding-bottom: 10px;">
-        <a href="/cadastroUE">Cadastro_UE</a>
-      </p>
+              <h6 class="text-center">{{user.userValue?.nome}}</h6>
+              <h6 class="text-center">Telefone</h6>
+              <h6 class="text-center">Curso</h6>
+              <h6 class="text-center">Turma</h6>
+              <h6 class="text-center">Período</h6>
+              <h6 class="text-center">Campus</h6>
 
-    </div>
-  </div>
-
-  <div id="financeiro-section">
-    <div class="financeiro">
-      <h2 class="destaque">Financeiro</h2>
-      <div>
-        <button class="visualizar" (click)="this.rota.navigate(['vizualizarBoletos'])">
-          <label>Visualizar</label>
-        </button>
+            </div>
+          </div>
+        </div>
       </div>
 
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-success">Editar</button>
+      </div>
     </div>
 
-    <div class="ocorrencias">
-      <h2>ocorrências</h2>
-      <hr>
-    </div>
+  </nav>
 
-    <div class="multas">
-      <h2>multas</h2>
-      <hr>
-    </div>
+  <!-- Page Content  -->
+  <div id="content">
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    </nav> -->
+    <div class="row d-flex">
+        <div class="col-md-6">
+          <div class="card border-0">
+            <div class="card-body">
+
+
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Ocorrencias</h4>
+
+                <!-- <button *ngIf='authService.adm()' class="text-info mr-3" href="">Editar</button>
+                <button *ngIf='authService.adm()' class="text-danger" href="">Apagar</button> -->
+
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0">
+            <div class="card-body">
+
+
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Multas</h4>
+
+                <!-- <button *ngIf='authService.adm()' class="text-info mr-3" href="">Editar</button>
+                <button *ngIf='authService.adm()' class="text-danger" href="">Apagar</button> -->
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
   </div>
-</body>
+</div>

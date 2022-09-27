@@ -1,16 +1,18 @@
 [
   {
+      "idTipoAcesso": 1,
       "name": "Luis",
-      "login": "luisg",
+      "login": "aluno",
       "email": "luisgustavofeitoza@gmail.com",
       "password": "123",
       "dtCadastro": "2022-05-18T14:53:17.036Z"
   },
   {
+      "idTipoAcesso": 2,
       "name": "administrador",
       "login": "admin",
       "email": "admin@gmail.com",
-      "password": "admin",
+      "password": "123",
       "dtCadastro": "2022-05-18T14:59:17.036Z"
   }
 ]
