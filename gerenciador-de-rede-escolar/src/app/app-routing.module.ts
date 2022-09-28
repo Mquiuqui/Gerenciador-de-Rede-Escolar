@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:'cadastroUE', component: CadastroUeComponent, canActivate:[AuthGuard]},
   {path:'cadastros', component: CadastrosComponent, canActivate:[AuthGuard]},
   {path:'matricula', component: MatriculaComponent, canActivate:[AuthGuard]},
+  {path:'visualizar-matricula', component: VisualizarMatriculaComponent, canActivate:[AuthGuard]},
   {path:'vizualizarBoletos', component: VisualizarBoletosComponent, canActivate:[AuthGuard]}
 ];
 
