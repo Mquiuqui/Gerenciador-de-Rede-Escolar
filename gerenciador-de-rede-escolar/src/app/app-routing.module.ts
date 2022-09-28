@@ -1,3 +1,4 @@
+import { MelhoresAlunosComponent } from './melhores-alunos/melhores-alunos.component';
 import { VisualizarMatriculaComponent } from './matricula/visualizar-matricula/visualizar-matricula.component';
 import { MatriculaComponent } from './matricula/matricula-envio/matricula.component';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path:'cadastros', component: CadastrosComponent, canActivate:[AuthGuard]},
   {path:'matricula', component: MatriculaComponent, canActivate:[AuthGuard]},
   {path:'visualizar-matricula', component: VisualizarMatriculaComponent, canActivate:[AuthGuard]},
-  {path:'vizualizarBoletos', component: VisualizarBoletosComponent, canActivate:[AuthGuard]}
+  {path:'vizualizarBoletos', component: VisualizarBoletosComponent, canActivate:[AuthGuard]},
+
+  {path:'melhores-alunos', component: MelhoresAlunosComponent, canActivate:[AuthGuard]},
 ];
 
 @NgModule({
