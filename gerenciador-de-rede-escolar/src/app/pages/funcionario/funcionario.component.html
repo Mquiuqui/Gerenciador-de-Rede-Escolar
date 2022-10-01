@@ -1,0 +1,50 @@
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <div class="cancelar form-button mb-4 d-flex ">
+            <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Voltar</button>
+          </div>
+          <div class="d-flex flex-row">
+            <label style="font-size: xx-large;font-weight: 700 ;">Funcionários Cadastrados</label>
+            <div class="ml-auto p-2">
+              <label (click)="this.rota.navigate(['cadastro_funcionario'])" class="adicionar"
+                style="font-size: larger;font-weight: 700 ;">Cadastrar</label>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="font-weight: 700 ;" scope="col">Id</th>
+                <th style="font-weight: 700 ;" scope="col">Nome</th>
+                <th style="font-weight: 700 ;" scope="col">Cargo</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <th scope="row">1</th>
+                <td>João Paulo</td>
+                <td>Professor</td>
+                <td class="editar">Editar</td>
+                <td class="apagar ">Apagar</td>
+
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Marcos</td>
+                <td>Diretor</td>
+                <td class="editar">Editar</td>
+                <td class="apagar ">Apagar</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

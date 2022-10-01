@@ -1,0 +1,54 @@
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Cadastro de Funcionário</h3>
+          <form class="requires-validation" novalidate>
+
+            <div class="col-md-12">
+              <input class="form-control" type="text" name="nome" placeholder="Nome : " required>
+              <input class="form-control" type="text" name="nome" placeholder="Email : " required>
+              <input class="form-control" type="text" name="nome" placeholder="Senha : " required>
+
+              <!-- <div class="valid-feedback">Username field is valid!</div>
+                             <div class="invalid-feedback">Username field cannot be blank!</div> -->
+            </div>
+
+            <div class="col-md-12  mt-3">
+              <input class="form-control" type="number" name="sal" placeholder="Salário : " required>
+            </div>
+
+            <div class="col-md-12  mt-3">
+              <input class="form-control" type="number" name="depto" placeholder="Departamento : " required>
+            </div>
+
+            <div class="col-md-12  mt-3">
+              <label>Cargo: </label>
+              <select #cargoSelect (change)="this.changeCargo(cargoSelect.value)" class="form-select"
+                aria-placeholder="Cargo" required>
+                <option value="1">Funcionario</option>
+                <option value="2">Professor</option>
+                <option value="2">Outro</option>
+              </select>
+             
+            </div>
+            <div *ngIf="this.cargo === '2'">
+                <div class="col-md-12  mt-3">
+                    <input class="form-control" type="number" name="sal" placeholder="Curso : " required>
+                  </div>
+            </div>
+
+            <div class="confirmar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+
+            <div class="cancelar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

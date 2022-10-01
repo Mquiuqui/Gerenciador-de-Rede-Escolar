@@ -19,6 +19,10 @@ import { AnoLetivoComponent } from './pages/ano-letivo/ano-letivo.component';
 import { UnidadeEscolarComponent } from './pages/unidade-escolar/unidade-escolar.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { CadastroAnoLetivoComponent } from './pages/ano-letivo/cadastro-ano-letivo/cadastro-ano-letivo.component';
+import { VisualizarMatriculaComponent } from './pages/matricula/visualizar-matricula/visualizar-matricula.component';
+import { ListarMatriculasComponent } from './pages/matricula/listar-matriculas/listar-matriculas.component';
+import { FuncionarioComponent } from './pages/funcionario/funcionario.component';
+import { CadastroFuncionarioComponent } from './pages/funcionario/cadastro-funcionario/cadastro-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { CadastroAnoLetivoComponent } from './pages/ano-letivo/cadastro-ano-leti
     UnidadeEscolarComponent,
     CursosComponent,
     CadastroAnoLetivoComponent,
-    ClasseComponent
+    ClasseComponent,
+    VisualizarMatriculaComponent,
+    ListarMatriculasComponent,
+    FuncionarioComponent,
+    CadastroFuncionarioComponent
   ],
   imports: [
     BrowserModule,

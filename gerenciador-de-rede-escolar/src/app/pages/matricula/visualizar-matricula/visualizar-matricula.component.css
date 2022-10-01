@@ -1,0 +1,58 @@
+
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+span {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 10px;
+  }
+
+
+  #ButtonConcluir{
+    margin: 5px;
+      color: white;
+      background: #00c40a;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      border: none;
+      padding: 5px 10px 5px;
+  }
+
+  #ButtonRecusar{
+    margin: 5px;
+      color: white;
+      background: #ff4d00;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      border: none;
+      padding: 5px 10px 5px;
+  }
+
+  div{
+      padding: 2px 0px 2px 0px;
+  }
+
+  .card{
+    box-shadow: #000 1px 1px 10px;
+  }
+  .card .card-body{
+    background-color: #e0e0e0;
+  }
+  .card p, small, span{
+    color: #000000 !important;
+  }

@@ -1,18 +1,29 @@
-[
-  {
-      "idTipoAcesso": 2,
-      "name": "Luis",
-      "login": "aluno",
-      "email": "luisgustavofeitoza@gmail.com",
-      "password": "123",
-      "dtCadastro": "2022-05-18T14:53:17.036Z"
+[{
+    "id": 1,
+    "Id_Acesso": 2,
+    "Nome_Aluno": "Luis",
+    "Endereco": "aluno",
+    "EmailAluno": "luisgustavofeitoza@gmail.com",
+    "Telefone": "123",
+    "Raca": "2022-05-18T14:53:17.036Z",
+    "Bolsa": "2022-05-18T14:53:17.036Z",
+    "Codigo_Classe": "2022-05-18T14:53:17.036Z",
+    "Codigo_Curso": "2022-05-18T14:53:17.036Z",
+    "Senha": "2022-05-18T14:53:17.036Z",
+    "idTipoAcesso": "2022-05-18T14:53:17.036Z",
+    "Rg_Aluno": "525.728.838-99",
+    "CPF_Aluno": "525.728.838-99",
+    "Flag_Matricula_Aceita": "2022-05-18T14:53:17.036Z"
   },
   {
-      "idTipoAcesso": 1,
-      "name": "administrador",
-      "login": "admin",
-      "email": "admin@gmail.com",
-      "password": "123",
-      "dtCadastro": "2022-05-18T14:59:17.036Z"
+    "id": 2,
+    "Id_Acesso": 2,
+    "Nome_Funcionário": "admin",
+    "Cargo": "desenvolvimento",
+    "EmailAluno": "desenvolvimento@gmail.com",
+    "Salario": 2000,
+    "Codigo_Departamento": 1,
+    "Email": "2022-05-18T14:53:17.036Z",
+    "Senha": "123"  
   }
 ]

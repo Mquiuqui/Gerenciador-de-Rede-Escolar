@@ -41,20 +41,18 @@
 
   <!-- Page Content  -->
   <div id="content">
-
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    
-    </nav> -->
-    <div class="row d-flex">
+    <div>
+      <div class="row">
         <div class="col-md-6">
-          <div class="card border-0"(click)="this.rota.navigate(['cadastroUE'])">
+          <div class="card border-0" (click)="this.rota.navigate(['cadastroUE'])">
             <div class="card-body">
-              <div class="col-md-12">
-                <h4 class="card-title mt-4">Cadastrar Unidade</h4>
+              <div class="col-md-6">
+                <h4 class="card-title mt-4">Unidade</h4>
               </div>
             </div>
           </div>
-
+        </div>
+        <div class="col-md-6">
           <div class="card border-0" (click)="this.rota.navigate(['ano_letivo'])">
             <div class="card-body">
               <div class="col-md-12">
@@ -62,7 +60,8 @@
               </div>
             </div>
           </div>
-
+        </div>
+        <div class="col-md-6">
           <div class="card border-0" (click)="this.rota.navigate(['cursos'])">
             <div class="card-body">
               <div class="col-md-12">
@@ -70,7 +69,8 @@
               </div>
             </div>
           </div>
-
+        </div>
+        <div class="col-md-6">
           <div class="card border-0" (click)="this.rota.navigate(['classe'])">
             <div class="card-body">
               <div class="col-md-12">
@@ -78,18 +78,27 @@
               </div>
             </div>
           </div>
-
+        </div>
+        <div class="col-md-6" (click)="this.rota.navigate(['listar_funcionario'])">
           <div class="card border-0">
             <div class="card-body">
               <div class="col-md-12">
-                <h4 class="card-title mt-4">Financeiro</h4>
+                <h4 class="card-title mt-4">Funcionarios</h4>
               </div>
             </div>
           </div>
-
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0" (click)="this.rota.navigate(['listar_matriculas'])">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Matriculas</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
+    </div>
 
   </div>
 </div>
@@ -144,43 +153,42 @@
     
     </nav> -->
     <div class="row d-flex">
-        <div class="col-md-6">
-          <div class="card border-0" (click)="this.info()">
-            <div class="card-body">
-              <div class="col-md-12">
-                <h4 class="card-title mt-4">Faltas</h4>
-              </div>
+      <div class="col-md-6">
+        <div class="card border-0" (click)="this.info()">
+          <div class="card-body">
+            <div class="col-md-12">
+              <h4 class="card-title mt-4">Faltas</h4>
             </div>
           </div>
-
-          <div class="card border-0" (click)="this.info()">
-            <div class="card-body">
-              <div class="col-md-12">
-                <h4 class="card-title mt-4">Notas</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="card border-0">
-            <div class="card-body">
-              <div class="col-md-12">
-                <h4 class="card-title mt-4">Ocorrências</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="card border-0">
-            <div class="card-body">
-              <div class="col-md-12">
-                <h4 class="card-title mt-4">Boletos</h4>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="card border-0" (click)="this.info()">
+          <div class="card-body">
+            <div class="col-md-12">
+              <h4 class="card-title mt-4">Notas</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-0">
+          <div class="card-body">
+            <div class="col-md-12">
+              <h4 class="card-title mt-4">Ocorrências</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-0">
+          <div class="card-body">
+            <div class="col-md-12">
+              <h4 class="card-title mt-4">Boletos</h4>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
 
 
   </div>
 </div>
-
