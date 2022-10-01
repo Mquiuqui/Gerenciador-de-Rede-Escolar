@@ -1,0 +1,75 @@
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Cadastro de Curso</h3>
+          <form class="requires-validation" novalidate>
+
+            <div class="col-md-12">
+              <input class="form-control" type="text" name="nome" placeholder="Titulo do Curso: " required>
+              <!-- <div class="valid-feedback">Username field is valid!</div>
+                           <div class="invalid-feedback">Username field cannot be blank!</div> -->
+            </div>
+
+            <div class="col-md-12">
+              <select class="form-select mt-3" required>
+                <option selected disabled value="">Modalidae do Curso: </option>
+                <option value="1">Integral</option>
+                <option value="2">Parcial</option>
+              </select>
+            </div>
+
+
+            <div class="col-md-12">
+              <select class="form-select mt-3" required>
+                <option selected disabled value="">Periodo do Curso:</option>
+                <option value="1">Matutino</option>
+                <option value="2">Vespertino</option>
+                <option value="3">Noturno</option>
+              </select>
+            </div>
+
+            <div class="col-md-12 mt-4">
+              <div class="col-md-12">
+
+                <label>Vagas:</label>
+                <!-- <div class="valid-feedback">Email field is valid!</div>
+								   <div class="invalid-feedback">Email field cannot be blank!</div> -->
+              </div>
+              <div class="col-md-12 ">
+				
+                <input class="form-control" type="text" name="vgComum" placeholder="Comum:" required>
+                <input class="form-control" type="text" name="vgInclu" placeholder="Inclusiva:" required>
+                <!-- <div class="valid-feedback">Email field is valid!</div>
+                               <div class="invalid-feedback">Email field cannot be blank!</div> -->
+              </div>
+
+            </div>
+
+
+            <!-- <div class="col-md-12">
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
+                <div class="valid-feedback">Password field is valid!</div>
+                <div class="invalid-feedback">Password field cannot be blank!</div>
+              </div> -->
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label">Termos de Aceite</label>
+              <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+            </div>
+
+
+            <div class="confirmar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+            <div class="cancelar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

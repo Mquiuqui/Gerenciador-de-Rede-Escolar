@@ -28,4 +28,8 @@ export class HomeComponent implements OnInit {
         console.log("logout")
         this.auth.logout()
     }
+
+    info(){
+        console.log("teste")
+    }
 }

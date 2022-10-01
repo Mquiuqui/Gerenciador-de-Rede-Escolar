@@ -1,0 +1,62 @@
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Matricula</h3>
+          <form class="requires-validation" novalidate>
+
+            <div class="col-md-12">
+              <input class="form-control" type="text" name="nome" placeholder="Nome Completo: " required>
+              <input class="form-control" type="text" name="nome" placeholder="Email: " required>
+              <input class="form-control" type="text" name="nome" placeholder="Telefone: " required>
+              <input class="form-control" type="text" name="nome" placeholder="RG: " required>
+              <input class="form-control" type="text" name="nome" placeholder="CPF: " required>
+              <input class="form-control" type="text" name="nome" placeholder="Endereço: " required>
+              <input class="form-control" type="text" name="nome" placeholder="Num Endereço: " required>
+
+              <select class="form-select mt-3" required>
+                <option selected disabled value="">Sexo: </option>
+                <option value="1">Maculino</option>
+                <option value="2">Feminino</option>
+                <option value="2">Outro</option>
+              </select>
+
+              <div class="d-flex flex-column mt-4">
+                <label>Histórico Escolar: </label>
+                <input class="form-control" type="file" placeholder="Hitórico Escolar" id="ButtonAnexar" />
+              </div>
+
+              <div class="d-flex flex-column mt-4">
+                <label>Comprovante de Residência: </label>
+                <input class="form-control" type="file" placeholder="Hitórico Escolar" id="ButtonAnexar" />
+              </div>
+
+              <div class="d-flex flex-column mt-4">
+                <label>Comprovante de Renda: </label>
+                <input class="form-control" type="file" placeholder="Hitórico Escolar" id="ButtonAnexar" />
+              </div>
+
+              <!-- <div class="valid-feedback">Username field is valid!</div>
+                             <div class="invalid-feedback">Username field cannot be blank!</div> -->
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label">Termos de Aceite</label>
+              <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+            </div>
+
+
+            <div class="confirmar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+            <div class="cancelar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" (click)="this.rota.navigate(['home'])" class="btn btn-primary">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

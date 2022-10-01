@@ -1,0 +1,186 @@
+<div class="wrapper" *ngIf="this.user.userValue!.idTipoAcesso === 1">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+
+    <div class="card-body">
+
+      <div class="form-group">
+        <div class="inicio text-center">
+          <img src="../../assets/img/aluno.jpg" class="img-fluid rounded-circle" alt="Foto usuário">
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6 d-flex justify-content-center">
+            <div class="d-flex align-items-center flex-column mb-2">
+
+              <h6 class="text-center">RGM</h6>
+
+              <h6 class="text-center">{{user.userValue?.nome}}</h6>
+              <h6 class="text-center">Telefone</h6>
+              <h6 class="text-center">Curso</h6>
+              <h6 class="text-center">Turma</h6>
+              <h6 class="text-center">Período</h6>
+              <h6 class="text-center">Campus</h6>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-success">Editar</button>
+      </div>
+
+      <div class="d-flex justify-content-center mt-4">
+        <button type="submit" (click)="this.logout()" class="btn btn-success">Sair</button>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    </nav> -->
+    <div class="row d-flex">
+        <div class="col-md-6">
+          <div class="card border-0"(click)="this.rota.navigate(['cadastroUE'])">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Cadastrar Unidade</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0" (click)="this.rota.navigate(['ano_letivo'])">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Ano Letivo</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0" (click)="this.rota.navigate(['cursos'])">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Cursos</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0" (click)="this.rota.navigate(['classe'])">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Classes</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Financeiro</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+<!-- ---------ALUNO----------- -->
+
+<div class="wrapper" *ngIf="this.user.userValue!.idTipoAcesso === 2">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+
+    <div class="card-body">
+
+      <div class="form-group">
+        <div class="inicio text-center">
+          <img src="../../assets/img/aluno.jpg" class="img-fluid rounded-circle" alt="Foto usuário">
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6 d-flex justify-content-center">
+            <div class="d-flex align-items-center flex-column mb-2">
+
+              <h6 class="text-center">RGM</h6>
+
+              <h6 class="text-center">{{user.userValue?.nome}}</h6>
+              <h6 class="text-center">Telefone</h6>
+              <h6 class="text-center">Curso</h6>
+              <h6 class="text-center">Turma</h6>
+              <h6 class="text-center">Período</h6>
+              <h6 class="text-center">Campus</h6>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-success">Editar</button>
+      </div>
+
+      <div class="d-flex justify-content-center mt-4">
+        <button type="submit" (click)="this.logout()" class="btn btn-success">Sair</button>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    </nav> -->
+    <div class="row d-flex">
+        <div class="col-md-6">
+          <div class="card border-0" (click)="this.info()">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Faltas</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0" (click)="this.info()">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Notas</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Ocorrências</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0">
+            <div class="card-body">
+              <div class="col-md-12">
+                <h4 class="card-title mt-4">Boletos</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+  </div>
+</div>
+

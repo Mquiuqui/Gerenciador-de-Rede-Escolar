@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 import { BehaviorSubject, lastValueFrom, Observable } from 'rxjs'
-import { IApiReturn } from 'd:/Trabalho/defense/defense-access-front/src/app/core/types/IApiReturn'
-import { IUser } from 'd:/Trabalho/defense/defense-access-front/src/app/core/types/IUser'
+
 import { environment } from 'src/environments/environment'
+import { IUser } from 'src/types/IUser'
 import bd from './users.json'
 
 @Injectable({ providedIn: 'root' })

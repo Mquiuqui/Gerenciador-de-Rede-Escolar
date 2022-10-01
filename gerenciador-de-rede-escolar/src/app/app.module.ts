@@ -3,16 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CadastroUeComponent } from './cadastro-ue/cadastro-ue.component';
-import { CadastrosComponent } from './cadastros/cadastros.component';
-import { MatriculaComponent } from './matricula/matricula.component';
-import { VisualizarBoletosComponent } from './visualizar-boletos/visualizar-boletos.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+
+import { ClasseComponent } from './pages/classe/classe.component';
+import { LoginComponent } from './pages/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CadastroUeComponent } from './pages/unidade-escolar/cadastro-ue/cadastro-ue.component';
+import { CadastrosComponent } from './pages/cursos/cadastros/cadastros.component';
+import { MatriculaComponent } from './pages/matricula/matricula.component';
+import { VisualizarBoletosComponent } from './pages/visualizar-boletos/visualizar-boletos.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { AnoLetivoComponent } from './pages/ano-letivo/ano-letivo.component';
+import { UnidadeEscolarComponent } from './pages/unidade-escolar/unidade-escolar.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { CadastroAnoLetivoComponent } from './pages/ano-letivo/cadastro-ano-letivo/cadastro-ano-letivo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     CadastrosComponent,
     MatriculaComponent,
     VisualizarBoletosComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    AnoLetivoComponent,
+    UnidadeEscolarComponent,
+    CursosComponent,
+    CadastroAnoLetivoComponent,
+    ClasseComponent
   ],
   imports: [
     BrowserModule,

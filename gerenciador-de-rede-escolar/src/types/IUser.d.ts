@@ -9,6 +9,7 @@
 
 export interface IUser {
     id:                    number;
+    idTipoAcesso:          number;
     nome:                  string;
     dtNascimento:          null;
     email:                 string;
