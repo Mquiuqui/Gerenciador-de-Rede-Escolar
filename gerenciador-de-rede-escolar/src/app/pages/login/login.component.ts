@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
+import { FlashMessageService } from 'src/app/components/flash-message/flash-message.service';
 import { AccountService } from 'src/app/core/auth/auth.account.service';
 import { environment } from 'src/environments/environment.prod';
 // import { UserLogin } from '../model/UserLogin';
@@ -21,6 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private router: Router,
+    private flashMessageService: FlashMessageService
     //private alerta: AlertasService
   ) { }
 
@@ -31,12 +34,22 @@ export class LoginComponent implements OnInit {
   async submit() {
 
     if (!this.user.username || !this.user.senha) console.log("teste")
-
+    console.log(this.user)
     const user = await this.accountService.login(this.user.username, this.user.senha)
-    if (!user) console.log("Usuário não encontrado ou não registrado", 'error');
-    else {
-      this.router.navigate(['home'])
-    }
+    console.log(user)
+    if (user.flagErro) this.flashMessageService.show(user.listaMensagens[0], 'error');
+    if(!user.flagErro) this.router.navigate(['home'])
+    
+    
+}
+  async submitFuncionario() {
+
+    const user = await this.accountService.loginFuncionario(this.user.username, this.user.senha)
+    console.log(user)
+    if (user.flagErro) this.flashMessageService.show(user.listaMensagens[0], 'error');
+    if(!user.flagErro) this.router.navigate(['home'])
+    
+    
 }
 
 }

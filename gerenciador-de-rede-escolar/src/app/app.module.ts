@@ -23,6 +23,7 @@ import { VisualizarMatriculaComponent } from './pages/matricula/visualizar-matri
 import { ListarMatriculasComponent } from './pages/matricula/listar-matriculas/listar-matriculas.component';
 import { FuncionarioComponent } from './pages/funcionario/funcionario.component';
 import { CadastroFuncionarioComponent } from './pages/funcionario/cadastro-funcionario/cadastro-funcionario.component';
+import { FlashMessageComponent } from './components/flash-message/flash-message.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CadastroFuncionarioComponent } from './pages/funcionario/cadastro-funci
     VisualizarMatriculaComponent,
     ListarMatriculasComponent,
     FuncionarioComponent,
-    CadastroFuncionarioComponent
+    CadastroFuncionarioComponent,
+    FlashMessageComponent
   ],
   imports: [
     BrowserModule,

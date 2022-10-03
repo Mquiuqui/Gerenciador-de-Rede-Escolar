@@ -1,0 +1,9 @@
+{
+    "loggers": true,
+    "sendEmails": true,
+    "homolog": true,
+    "versaoApp": {
+        "versao": "0.0.1",
+        "flagObrigatorio": false
+    }
+}

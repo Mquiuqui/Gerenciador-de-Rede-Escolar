@@ -1,0 +1,13 @@
+[
+  {
+    "name": "default",
+    "type": "mssql",
+    "host": "172.31.10.125",
+    "port": 1433,
+    "username": "sa",
+    "password": "&UmlD87$g^Gihd3*Y%xnA$1q&d",
+    "database": "",
+    "synchronize": false,
+    "entities": ["entities/*.js"]
+  }
+]

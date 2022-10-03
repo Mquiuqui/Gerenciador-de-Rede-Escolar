@@ -1,4 +1,4 @@
-<div class="wrapper" *ngIf="this.user.userValue!.idTipoAcesso === 1">
+<div class="wrapper" *ngIf="AcessoId === 1 || AcessoId === 2 || AcessoId === 3 || AcessoId === 4">
   <!-- Sidebar  -->
   <nav id="sidebar">
 
@@ -15,7 +15,7 @@
 
               <h6 class="text-center">RGM</h6>
 
-              <h6 class="text-center">{{user.userValue?.nome}}</h6>
+              <h6 class="text-center">{{user.userValue?.id}}</h6>
               <h6 class="text-center">Telefone</h6>
               <h6 class="text-center">Curso</h6>
               <h6 class="text-center">Turma</h6>
@@ -105,7 +105,7 @@
 
 <!-- ---------ALUNO----------- -->
 
-<div class="wrapper" *ngIf="this.user.userValue!.idTipoAcesso === 2">
+<div class="wrapper" *ngIf="AcessoId === 5">
   <!-- Sidebar  -->
   <nav id="sidebar">
 

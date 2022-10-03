@@ -1,0 +1,6 @@
+typeorm-model-generator -h db_host -u db_user -x "db_password" -d db_name -e mysql -o .
+
+netsh advfirewall firewall add rule name="ALLOW TCP PORT 9000" dir=in action=allow protocol=TCP localport=9000
+
+netsh firewall set opmode enable
+netsh firewall set opmode disable

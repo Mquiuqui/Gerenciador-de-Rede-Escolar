@@ -1,0 +1,10 @@
+<div *ngIf="showFlashMessage.value" class="mb-0" [ngClass]="showFlashMessage.type === 'error' ? 'alert alert-danger' :
+    showFlashMessage.type === 'success'? 'alert alert-success' :
+    {'bg-blue-100': true, 'border-blue-500': true, 'text-blue-700': true }" role="alert">
+
+    <p class="font-bold">
+        {{showFlashMessage.type === 'error' ? 'Ops...' : showFlashMessage.type === 'success' ? 'Sucesso' : 'Info'}}
+    </p>
+    <p>{{showFlashMessage.message}}</p>
+
+</div>

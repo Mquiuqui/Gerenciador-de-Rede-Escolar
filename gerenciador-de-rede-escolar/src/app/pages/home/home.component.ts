@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
     rota: Router
     user: AccountService
+    AcessoId:number
     constructor(
         private auth: AccountService,
         private route: Router
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.user.userValue)
+        console.log(this.user.userValue.idAcesso)
+        this.AcessoId = this.user.userValue.idAcesso? this.user.userValue.idAcesso : this.user.userValue.codigoDepartamento2.idAcesso.id
     }
 
     logout() {

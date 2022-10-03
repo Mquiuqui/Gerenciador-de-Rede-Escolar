@@ -13,23 +13,20 @@
               <thead>
                 <tr>
                   <th style="font-weight: 700 ;" scope="col">Id</th>
-                  <th style="font-weight: 700 ;" scope="col">Data Envio</th>
+                  <th style="font-weight: 700 ;" scope="col">Nome</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr *ngFor="let matricula of listaMatriculas">
   
-                  <th scope="row">1</th>
-                  <td>22-09-2022</td>
+                  <th scope="row">{{matricula.id}}</th>
+                  <td>{{matricula.nomeAluno}}</td>
                   <td class="editar" (click)="this.rota.navigate(['visualizar_matricula'])">Visualizar</td>
+                  <td class="editar" (click)="this.aprovar(matricula.id)">aprovar</td>
   
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>23-09-2022</td>
-                  <td class="editar" (click)="this.rota.navigate(['visualizar_matricula'])">Visualizar</td>
-                </tr>
+
               </tbody>
             </table>
           </div>

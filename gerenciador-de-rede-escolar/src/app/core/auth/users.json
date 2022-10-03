@@ -9,21 +9,20 @@
     "Bolsa": "2022-05-18T14:53:17.036Z",
     "Codigo_Classe": "2022-05-18T14:53:17.036Z",
     "Codigo_Curso": "2022-05-18T14:53:17.036Z",
-    "Senha": "2022-05-18T14:53:17.036Z",
-    "idTipoAcesso": "2022-05-18T14:53:17.036Z",
+    "password": "123",
     "Rg_Aluno": "525.728.838-99",
     "CPF_Aluno": "525.728.838-99",
-    "Flag_Matricula_Aceita": "2022-05-18T14:53:17.036Z"
+    "Flag_Matricula_Aceita": true
   },
   {
     "id": 2,
-    "Id_Acesso": 2,
+    "Id_Acesso": 1,
     "Nome_Funcionário": "admin",
     "Cargo": "desenvolvimento",
     "EmailAluno": "desenvolvimento@gmail.com",
     "Salario": 2000,
     "Codigo_Departamento": 1,
     "Email": "2022-05-18T14:53:17.036Z",
-    "Senha": "123"  
+    "password": "123"  
   }
 ]
