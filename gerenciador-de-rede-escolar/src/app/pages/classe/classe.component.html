@@ -9,7 +9,7 @@
             <div class="d-flex flex-row">
               <label style="font-size: xx-large;font-weight: 700 ;">Classes Cadastrados</label>
               <div class="ml-auto p-2">
-                <label (click)="this.rota.navigate(['cadastro_curso'])" class="adicionar"
+                <label (click)="this.rota.navigate(['cadastro_classe'])" class="adicionar"
                   style="font-size: larger;font-weight: 700 ;">Cadastrar</label>
               </div>
             </div>
@@ -18,39 +18,23 @@
                 <tr>
                   <th style="font-weight: 700 ;" scope="col">Id</th>
                   <th style="font-weight: 700 ;" scope="col">Titulo</th>
-                  <th style="font-weight: 700 ;" scope="col">Periodo</th>
-                  <th style="font-weight: 700 ;" scope="col">Modalidade</th>
+                  <th style="font-weight: 700 ;" scope="col">Curso</th>
+                  <th style="font-weight: 700 ;" scope="col">TOT Vagas</th>
                   <th></th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr *ngFor="let classe of listaClasse">
   
-                  <th scope="row">1</th>
-                  <td>Informática</td>
-                  <td>Noite</td>
-                  <td>Integral</td>
-                  <td class="editar">Editar</td>
-                  <td class="apagar ">Apagar</td>
+                  <th scope="row">{{classe.id}}</th>
+                  <td>{{classe.descricaoClasse}}</td>
+                  <td>{{classe.codigoCurso2.nomeCurso}}</td>
+                  <td>{{classe.quantidadeAlunos+classe.quantidadeAlunosEspeciais}}</td>
+                  <td class="editar">Visualizar</td>
   
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Direito</td>
-                  <td>Noite</td>
-                  <td>Integral</td>
-                  <td class="editar">Editar</td>
-                  <td class="apagar ">Apagar</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Odontologia</td>
-                  <td>Noite</td>
-                  <td>Integral</td>
-                  <td class="editar">Editar</td>
-                  <td class="apagar ">Apagar</td>
-                </tr>
+  
               </tbody>
             </table>
           </div>

@@ -15,7 +15,7 @@ export class ClasseController {
 
     @Get('/Classes')
     async all() {
-        let a = await this.defaultRepository.find()
+        let a = await this.defaultRepository.find({relations:['codigoCurso2']})
         return a
 
     }
@@ -28,18 +28,19 @@ export class ClasseController {
     }
 
     @Post('/Classe')
-    saveClasse(req: Request) {
+    async saveClasse(req: Request) {
 
         let novaClasse = new Classe()
 
-        novaClasse.codigoCurso = Number(req.body.idCurso)
+        novaClasse.codigoCurso = Number(req.body.codigoCurso)
         novaClasse.descricaoClasse = req.body.descricaoClasse
         novaClasse.quantidadeAlunos = Number(req.body.quantidadeAlunos)
         novaClasse.quantidadeAlunosEspeciais = Number(req.body.quantidadeAlunosEspeciais)
 
+        console.log(novaClasse)
+        let classeSave = await this.defaultRepository.save(novaClasse)
 
-        return this.defaultRepository.save(novaClasse)
-
+        return classeSave
     }
     
 

@@ -4,6 +4,7 @@ import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { AppComponent } from './app.component';
 import { AnoLetivoComponent } from './pages/ano-letivo/ano-letivo.component';
 import { CadastroAnoLetivoComponent } from './pages/ano-letivo/cadastro-ano-letivo/cadastro-ano-letivo.component';
+import { CadastroClasseComponent } from './pages/classe/cadastro-classe/cadastro-classe.component';
 
 import { ClasseComponent } from './pages/classe/classe.component';
 import { CadastrosComponent } from './pages/cursos/cadastros/cadastros.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path:'cadastro_curso', component: CadastrosComponent, canActivate:[AuthGuard]},
   
   {path:'classe', component: ClasseComponent, canActivate:[AuthGuard]},
+  {path:'cadastro_classe', component: CadastroClasseComponent, canActivate:[AuthGuard]},
   
   {path:'vizualizar_boletos', component: VisualizarBoletosComponent, canActivate:[AuthGuard]},
 

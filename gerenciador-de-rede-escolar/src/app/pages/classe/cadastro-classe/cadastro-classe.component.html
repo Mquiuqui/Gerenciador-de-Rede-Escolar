@@ -1,0 +1,37 @@
+<div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <h3>Cadastro de Classe</h3>
+            <form class="requires-validation" (submit)="this.submit($event)" novalidate>
+  
+              <div class="col-md-12">
+                <input class="form-control" type="text" name="nome" placeholder="Titulo da Classe: " required>
+              </div>
+  
+              <div class="col-md-12 mt-4">
+                <label>Curso Desejado: </label>
+                <select class="form-select" required>
+                  <option *ngFor=" let curso of listaCursos" value={{curso.id}}>{{curso.nomeCurso}}</option>
+                </select>
+              </div>
+  
+              <div class="col-md-12">
+                <input class="form-control" type="text" name="vComum" placeholder="Vagas Comuns: " required>
+                <input class="form-control" type="text" name="vEspecial" placeholder="Vagas Especiais: " required>
+              </div>
+  
+              <div class="confirmar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+              </div>
+              <div class="cancelar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" (click)="this.rota.navigate(['/classe'])" class="btn btn-primary">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
