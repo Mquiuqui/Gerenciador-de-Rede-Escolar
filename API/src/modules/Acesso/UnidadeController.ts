@@ -35,7 +35,7 @@ export class UnidadeController {
         let novaUnidade = new UnidadadeEscolar()
 
         novaUnidade.administrador = 1
-        novaUnidade.endereco = req.body.endereco
+        novaUnidade.endereco = req.body.endereco+','+req.body.nroEndereco
         novaUnidade.nomeEscola = req.body.nomeEscola
         
         return this.defaultRepository.save(novaUnidade)
