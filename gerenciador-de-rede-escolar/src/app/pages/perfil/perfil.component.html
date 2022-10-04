@@ -1,0 +1,37 @@
+<div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <h3>Perfil</h3>
+            <form class="requires-validation" novalidate>
+  
+              <div class="col-md-12">
+                <input class="form-control" disabled [value]="this.user.userValue?.nomeAluno" type="text" name="nome" placeholder="Nome Completo: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.emailAluno" type="text" name="nome" placeholder="Email: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.telefone" type="text" name="nome" placeholder="Telefone: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.rgAluno" type="text" name="nome" placeholder="RG: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.cpfAluno" type="text" name="nome" placeholder="CPF: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.endereco" type="text" name="nome" placeholder="Endereço: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.sexoAluno" type="text" name="nome" placeholder="Sexo: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.senhaAluno" type="password" name="nome" placeholder="Senha: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.codigoCurso2.nomeCurso" type="text" name="nome" placeholder="Curso: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.codigoClasse2.descricaoClasse" type="text" name="nome" placeholder="Classe: " required>
+                <input class="form-control" disabled [value]="this.user.userValue?.codigoCurso2.idTurno2.nomeTurno" type="text" name="nome" placeholder="Periodo: " required>
+  
+
+              </div>
+  
+              <!-- <div class="confirmar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" type="submit" class="btn btn-primary">Alterar</button>
+              </div> -->
+              <div class="cancelar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" (click)="this.rota.navigate(['home'])" class="btn btn-primary">Voltar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

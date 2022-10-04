@@ -13,14 +13,8 @@
           <div class="col-md-6 d-flex justify-content-center">
             <div class="d-flex align-items-center flex-column mb-2">
 
-              <h6 class="text-center">RGM</h6>
-
-              <h6 class="text-center">{{user.userValue?.id}}</h6>
-              <h6 class="text-center">Telefone</h6>
-              <h6 class="text-center">Curso</h6>
-              <h6 class="text-center">Turma</h6>
-              <h6 class="text-center">Período</h6>
-              <h6 class="text-center">Campus</h6>
+              <h6 class="texto text-center">Código: {{user.userValue?.id}}</h6>
+              <h6 class="texto text-center ">Nome: {{user.userValue?.nomeFuncionario}} </h6>
 
             </div>
           </div>
@@ -111,23 +105,23 @@
 
     <div class="card-body">
 
-      <div class="form-group">
+      <div class="form-group w-100">
         <div class="inicio text-center">
           <img src="../../assets/img/aluno.jpg" class="img-fluid rounded-circle" alt="Foto usuário">
         </div>
 
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center ">
           <div class="col-md-6 d-flex justify-content-center">
             <div class="d-flex align-items-center flex-column mb-2">
 
-              <h6 class="text-center">RGM</h6>
+              <h6 class="text-center">RGM: {{user.userValue?.id}}</h6>
 
-              <h6 class="text-center">{{user.userValue?.nome}}</h6>
-              <h6 class="text-center">Telefone</h6>
-              <h6 class="text-center">Curso</h6>
-              <h6 class="text-center">Turma</h6>
-              <h6 class="text-center">Período</h6>
-              <h6 class="text-center">Campus</h6>
+              <h6 class="text-center">Nome: {{user.userValue?.nomeAluno}}</h6>
+              <h6 class="text-center">Telefone: {{user.userValue?.telefone}}</h6>
+              <h6 class="text-center">Curso: {{user.userValue?.codigoCurso2.nomeCurso}}</h6>
+              <h6 class="text-center">Turma: {{user.userValue?.codigoClasse2.descricaoClasse}}</h6>
+              <h6 class="text-center">Período: {{user.userValue?.codigoCurso2.idTurno2.nomeTurno}}</h6>
+              <h6 class="text-center">Campus: Cruzeiro do Sul</h6>
 
             </div>
           </div>
@@ -136,7 +130,7 @@
 
 
       <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-success">Editar</button>
+        <button type="submit" (click)="this.rota.navigate(['perfil_editar'])" class="btn btn-success">Visualizar</button>
       </div>
 
       <div class="d-flex justify-content-center mt-4">

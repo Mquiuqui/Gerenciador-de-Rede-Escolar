@@ -17,14 +17,17 @@ export class Classe {
   @Column("int", { primary: true, name: "id" })
   id: number;
 
-  @Column("int", { name: "Quantidade_Alunos", nullable: true })
-  quantidadeAlunos: number | null;
-
   @Column("int", { name: "Codigo_Curso", nullable: true })
   codigoCurso: number | null;
 
-  @Column("int", { name: "Codigo_Professor", nullable: true })
-  codigoProfessor: number | null;
+  @Column("int", { name: "Quantidade_Alunos", nullable: true })
+  quantidadeAlunos: number | null;
+
+  @Column("int", { name: "Quantidade_Alunos_Especiais", nullable: true })
+  quantidadeAlunosEspeciais: number | null;
+
+  @Column("varchar", { name: "Descricao_Classe", nullable: true, length: 45 })
+  descricaoClasse: string | null;
 
   @OneToMany(() => Aluno, (aluno) => aluno.codigoClasse2)
   alunos: Aluno[];

@@ -1,70 +1,76 @@
-<body class="center">
-  <h2>Matrículas</h2>
+<div class="form-body" *ngIf="AcessoId === 5">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Perfil</h3>
+          <form class="requires-validation" novalidate>
 
+            <div class="col-md-12">
+              <input class="form-control" disabled [value]="this.user.userValue?.nomeAluno" type="text" name="nome" placeholder="Nome Completo: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.emailAluno" type="text" name="nome" placeholder="Email: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.telefone" type="text" name="nome" placeholder="Telefone: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.rgAluno" type="text" name="nome" placeholder="RG: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.cpfAluno" type="text" name="nome" placeholder="CPF: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.endereco" type="text" name="nome" placeholder="Endereço: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.sexoAluno" type="text" name="nome" placeholder="Sexo: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.senhaAluno" type="password" name="nome" placeholder="Senha: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.codigoCurso2.nomeCurso" type="text" name="nome" placeholder="Curso: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.codigoClasse2.descricaoClasse" type="text" name="nome" placeholder="Classe: " required>
+              <input class="form-control" disabled [value]="this.user.userValue?.codigoCurso2.idTurno2.nomeTurno" type="text" name="nome" placeholder="Periodo: " required>
 
-  <div class="col-md-12">
-    <div class="card border-0">
-      <div class="card-body">
-        <div>
-          <form>
-
-            <!--Nome -->
-            <div>
-              <span>Nome completo: </span>
 
             </div>
 
-            <!--E-mail -->
-            <div>
-
-
+            <!-- <div class="confirmar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" type="submit" class="btn btn-primary">Alterar</button>
+            </div> -->
+            <div class="cancelar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" (click)="this.rota.navigate(['home'])" class="btn btn-primary">Voltar</button>
             </div>
-
-            <!--RG-->
-            <div>
-              <span>RG: </span>
-
-            </div>
-
-            <!--CPF-->
-            <div>
-              <span>CPF: </span>
-            </div>
-
-            <!--Endereço-->
-            <div>
-              <span>Endereço: </span><br>
-            </div>
-
-            <!--Sexo-->
-            <div>
-              <span>Sexo: </span>
-            </div>
-
-            <!--Hitórico Escolar-->
-            <div>
-              <span>Hitórico Escolar: </span>
-
-            </div>
-
-            <!--Comprovante de residencia-->
-            <div>
-              <span>Comprovante de residencia: </span>
-
-            </div>
-
-            <!--Comprovante de renda-->
-            <div>
-              <span>Comprovante de renda: </span>
-
-            </div>
-
-            <!--Botão de enviar-->
-            <button type="submit" id="ButtonRecusar">RECUSAR MATRÍCULA</button>
-            <button type="submit" id="ButtonConcluir">CONCLUIR MATRÍCULA</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
+
+<div class="form-body" *ngIf="AcessoId === 1 || AcessoId === 2 || AcessoId === 3 || AcessoId === 4">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3>Matricula</h3>
+          <form class="requires-validation" novalidate>
+
+            <div class="col-md-12">
+              <input class="form-control" disabled [value]="this.matricula.nomeAluno" type="text" name="nome" placeholder="Nome Completo: " required>
+              <input class="form-control" disabled [value]="this.matricula.emailAluno" type="text" name="nome" placeholder="Email: " required>
+              <input class="form-control" disabled [value]="this.matricula.telefone" type="text" name="nome" placeholder="Telefone: " required>
+              <input class="form-control" disabled [value]="this.matricula.rgAluno" type="text" name="nome" placeholder="RG: " required>
+              <input class="form-control" disabled [value]="this.matricula.cpfAluno" type="text" name="nome" placeholder="CPF: " required>
+              <input class="form-control" disabled [value]="this.matricula.endereco" type="text" name="nome" placeholder="Endereço: " required>
+              <input class="form-control" disabled [value]="this.matricula.sexoAluno" type="text" name="nome" placeholder="Sexo: " required>
+              <input class="form-control" disabled [value]="this.matricula.senhaAluno" type="password" name="nome" placeholder="Senha: " required>
+              <input class="form-control" disabled [value]="this.matricula.codigoCurso2.nomeCurso" type="text" name="nome" placeholder="Curso: " required>
+              <input class="form-control" disabled [value]="this.matricula.codigoClasse2.descricaoClasse" type="text" name="nome" placeholder="Classe: " required>
+              <input class="form-control" disabled [value]="this.matricula.codigoCurso2.idTurno2.nomeTurno" type="text" name="nome" placeholder="Periodo: " required>
+
+
+            </div>
+
+            <!-- <div class="confirmar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" type="submit" class="btn btn-primary">Alterar</button>
+            </div> -->
+            <div class="confirmar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" (click)="this.rota.navigate(['home'])" class="btn btn-primary">Confirmar Matricula</button>
+            </div>
+            <div class="cancelar form-button mt-3 d-flex justify-content-center">
+              <button id="submit" (click)="this.rota.navigate(['home'])" class="btn btn-primary">Negar Matricula</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

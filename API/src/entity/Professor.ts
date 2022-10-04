@@ -8,6 +8,7 @@ import {
 } from "typeorm";
 import { Atividade } from "./Atividade";
 import { Disciplina } from "./Disciplina";
+import { Ocorrencia } from "./Ocorrencia";
 import { Curso } from "./Curso";
 import { Funcionario } from "./Funcionario";
 import { UnidadadeEscolar } from "./UnidadadeEscolar";
@@ -37,6 +38,9 @@ export class Professor {
 
   @OneToMany(() => Disciplina, (disciplina) => disciplina.idProfessor2)
   disciplinas: Disciplina[];
+
+  @OneToMany(() => Ocorrencia, (ocorrencia) => ocorrencia.idProfessor2)
+  ocorrencias: Ocorrencia[];
 
   @ManyToOne(() => Curso, (curso) => curso.professors, {
     onDelete: "NO ACTION",

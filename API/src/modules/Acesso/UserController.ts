@@ -16,7 +16,7 @@ export class UserController {
 
     @Post('/aluno/login')
     async login(req: Request) {
-        let a = await this.defaultRepositoryMatricula.findOne({where:{id:Number(req.body.login),senhaAluno:req.body.senha}})
+        let a = await this.defaultRepositoryMatricula.findOne({where:{id:Number(req.body.login),senhaAluno:req.body.senha},relations: ['codigoCurso2', 'codigoCurso2.idTurno2', 'codigoClasse2']})
         if(!a) throw new BadRequestException("login não encontrado")
         console.log(a)
         if(a.flagMatriculaAceita === 0) throw new Error("Sua Matricula ainda está em Analise, entre em contato com a escola para saber mais")
@@ -60,6 +60,17 @@ export class UserController {
     all(req: Request) {
 
         return this.defaultRepositoryMatricula.find()
+
+    }
+
+    @Get('/Matricula/:id')
+    async one(req: Request) {
+
+        let response = await this.defaultRepositoryMatricula.findOne({where:{id:Number(req.params.id)},relations: ['codigoCurso2', 'codigoCurso2.idTurno2', 'codigoClasse2']})
+        
+        if(!response) throw new BadRequestException("Matricula não encontrada")
+        
+        return response
 
     }
 

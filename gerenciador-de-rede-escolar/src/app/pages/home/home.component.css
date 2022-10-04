@@ -185,6 +185,10 @@ h1{
     background-color: #495b6d;
     color: #f3f4f7;
   }
+
+  .texto{
+    min-width: 200px;
+  }
   
 /* ---------------------------------------------------
     MEDIAQUERIES

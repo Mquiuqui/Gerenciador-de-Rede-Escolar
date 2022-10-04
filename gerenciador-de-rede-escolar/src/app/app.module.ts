@@ -24,6 +24,7 @@ import { ListarMatriculasComponent } from './pages/matricula/listar-matriculas/l
 import { FuncionarioComponent } from './pages/funcionario/funcionario.component';
 import { CadastroFuncionarioComponent } from './pages/funcionario/cadastro-funcionario/cadastro-funcionario.component';
 import { FlashMessageComponent } from './components/flash-message/flash-message.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FlashMessageComponent } from './components/flash-message/flash-message.
     ListarMatriculasComponent,
     FuncionarioComponent,
     CadastroFuncionarioComponent,
-    FlashMessageComponent
+    FlashMessageComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

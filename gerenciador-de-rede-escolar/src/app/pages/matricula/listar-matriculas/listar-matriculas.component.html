@@ -22,7 +22,7 @@
   
                   <th scope="row">{{matricula.id}}</th>
                   <td>{{matricula.nomeAluno}}</td>
-                  <td class="editar" (click)="this.rota.navigate(['visualizar_matricula'])">Visualizar</td>
+                  <td class="editar" (click)="this.rota.navigate(['visualizar_matricula/'+matricula.id])">Visualizar</td>
                   <td class="editar" (click)="this.aprovar(matricula.id)">aprovar</td>
   
                 </tr>

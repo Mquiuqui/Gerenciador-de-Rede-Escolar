@@ -16,6 +16,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ListarMatriculasComponent } from './pages/matricula/listar-matriculas/listar-matriculas.component';
 import { MatriculaComponent } from './pages/matricula/matricula.component';
 import { VisualizarMatriculaComponent } from './pages/matricula/visualizar-matricula/visualizar-matricula.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CadastroUeComponent } from './pages/unidade-escolar/cadastro-ue/cadastro-ue.component';
 import { UnidadeEscolarComponent } from './pages/unidade-escolar/unidade-escolar.component';
 import { VisualizarBoletosComponent } from './pages/visualizar-boletos/visualizar-boletos.component';
@@ -25,10 +26,11 @@ const routes: Routes = [
   {path:'', component: LandingPageComponent},
   
   {path:'home', component: HomeComponent, canActivate:[AuthGuard]},
+  {path:'perfil_editar', component: PerfilComponent, canActivate:[AuthGuard]},
   
   {path:'matricula', component: MatriculaComponent},
   {path:'listar_matriculas', component: ListarMatriculasComponent, canActivate:[AuthGuard]},
-  {path:'visualizar_matricula', component: VisualizarMatriculaComponent, canActivate:[AuthGuard]},
+  {path:'visualizar_matricula/:id', component: VisualizarMatriculaComponent, canActivate:[AuthGuard]},
   
   {path:'unidade_escolar', component: UnidadeEscolarComponent, canActivate:[AuthGuard]},
   {path:'cadastroUE', component: CadastroUeComponent, canActivate:[AuthGuard]},

@@ -12,6 +12,7 @@ import { Classe } from "./Classe";
 import { Curso } from "./Curso";
 import { Chamada } from "./Chamada";
 import { Nota } from "./Nota";
+import { Ocorrencia } from "./Ocorrencia";
 
 @Index("FOREIGNKEY_ALUNO_CURSO_idx", ["codigoCurso"], {})
 @Index("FOREIGNKEY_ALUNO_CLASSE_idx", ["codigoClasse"], {})
@@ -51,7 +52,7 @@ export class Aluno {
   @Column("int", { name: "ID_Acesso", nullable: true })
   idAcesso: number | null;
 
-  @Column("bit", { name: "Flag_Matricula_aceita", nullable: true })
+  @Column("tinyint", { name: "Flag_Matricula_aceita", nullable: true })
   flagMatriculaAceita: number | null;
 
   @Column("varchar", { name: "RG_Aluno", nullable: true, length: 45 })
@@ -59,6 +60,9 @@ export class Aluno {
 
   @Column("varchar", { name: "CPF_Aluno", nullable: true, length: 45 })
   cpfAluno: string | null;
+
+  @Column("varchar", { name: "Sexo_Aluno", nullable: true, length: 45 })
+  sexoAluno: string | null;
 
   @ManyToOne(() => GrupoAcesso, (grupoAcesso) => grupoAcesso.alunos, {
     onDelete: "NO ACTION",
@@ -87,6 +91,6 @@ export class Aluno {
   @OneToMany(() => Nota, (nota) => nota.rgmAluno2)
   notas: Nota[];
 
-  @Column("varchar", { name: "Sexo_Aluno", nullable: true, length: 45 })
-  sexoAluno: string | null;
+  @OneToMany(() => Ocorrencia, (ocorrencia) => ocorrencia.idAluno2)
+  ocorrencias: Ocorrencia[];
 }

@@ -12,6 +12,7 @@ import { Estoque } from "./Estoque"
 import { Funcionario } from "./Funcionario"
 import { GrupoAcesso } from "./GrupoAcesso"
 import { Nota } from "./Nota"
+import { Ocorrencia } from "./Ocorrencia"
 import { Parametros } from "./Parametros"
 import { Professor } from "./Professor"
 import { Turno } from "./Turno"
@@ -38,6 +39,7 @@ export const Tables = {
         yield Administracao
         yield Parametros
         yield Nota
+        yield Ocorrencia
 
 
     }

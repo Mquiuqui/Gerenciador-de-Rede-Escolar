@@ -12,17 +12,14 @@ import { UnidadadeEscolar } from "./UnidadadeEscolar";
 @Index("FOREIGNKEY_TURNO_UE_idx", ["idEscola"], {})
 @Entity("turno", { schema: "prjescola" })
 export class Turno {
+  @Column("int", { primary: true, name: "id" })
+  id: number;
+
   @Column("int", { name: "ID_escola", nullable: true })
   idEscola: number | null;
 
   @Column("varchar", { name: "Nome_Turno", nullable: true, length: 15 })
   nomeTurno: string | null;
-
-  @Column("int", { primary: true, name: "id" })
-  id: number;
-
-  @Column("varchar", { name: "turnocol", nullable: true, length: 45 })
-  turnocol: string | null;
 
   @OneToMany(() => Curso, (curso) => curso.idTurno2)
   cursos: Curso[];
