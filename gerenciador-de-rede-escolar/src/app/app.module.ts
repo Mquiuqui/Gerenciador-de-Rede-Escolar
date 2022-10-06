@@ -28,6 +28,12 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CadastroClasseComponent } from './pages/classe/cadastro-classe/cadastro-classe.component';
 import { DisciplinasComponent } from './pages/disciplinas/disciplinas.component';
 import { CadastroDisciplinasComponent } from './pages/disciplinas/cadastro-disciplinas/cadastro-disciplinas.component';
+import { DetalhesDisciplinaComponent } from './pages/disciplinas/detalhes-disciplina/detalhes-disciplina.component';
+import { AtividadesComponent } from './pages/atividades/atividades.component';
+import { CadastrarAtividadeComponent } from './pages/atividades/cadastrar-atividade/cadastrar-atividade.component';
+import { NotasComponent } from './pages/notas/notas.component';
+import { OcorrenciasComponent } from './pages/ocorrencias/ocorrencias.component';
+import { ChamadasComponent } from './pages/chamadas/chamadas.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +58,13 @@ import { CadastroDisciplinasComponent } from './pages/disciplinas/cadastro-disci
     PerfilComponent,
     CadastroClasseComponent,
     DisciplinasComponent,
-    CadastroDisciplinasComponent
+    CadastroDisciplinasComponent,
+    DetalhesDisciplinaComponent,
+    AtividadesComponent,
+    CadastrarAtividadeComponent,
+    NotasComponent,
+    OcorrenciasComponent,
+    ChamadasComponent
   ],
   imports: [
     BrowserModule,
