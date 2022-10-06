@@ -24,21 +24,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let funcionario of listaFuncionarios">
 
-                <th scope="row">1</th>
-                <td>João Paulo</td>
-                <td>Professor</td>
-                <td class="editar">Editar</td>
-                <td class="apagar ">Apagar</td>
+                <th scope="row">{{funcionario.id}}</th>
+                <td>{{funcionario.nomeFuncionario}}</td>
+                <td>{{funcionario.cargo}}</td>
+                <td class="editar">Visualizar</td>
 
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Marcos</td>
-                <td>Diretor</td>
-                <td class="editar">Editar</td>
-                <td class="apagar ">Apagar</td>
               </tr>
 
             </tbody>

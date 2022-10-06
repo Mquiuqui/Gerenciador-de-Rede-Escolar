@@ -20,9 +20,17 @@ export class ClasseController {
 
     }
 
-    @Get('/Classes/:id')
+    @Get('/Classe/:id')
     async one(req: Request) {
         let a = await this.defaultRepository.findOne({where:{id:Number(req.params.id)}})
+        return a
+
+    }
+
+    @Get('/Classes/:id')
+    async porCurso(req: Request) {
+        console.log(req.params)
+        let a = await this.defaultRepository.find({where:{codigoCurso:Number(req.params.id)}})
         return a
 
     }

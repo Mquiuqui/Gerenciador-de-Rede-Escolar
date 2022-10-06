@@ -1,0 +1,57 @@
+<div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <h3>Cadastro de Disciplinas</h3>
+            <form (submit)="this.submit($event)" class="requires-validation" novalidate>
+    
+              <div class="col-md-12">
+                <input class="form-control" type="text" name="nome" placeholder="Nome Disciplina : " required>
+              </div>
+              
+              <div class="col-md-12 mt-4">
+                <label>Curso </label>
+                <select #selectCurso (loadstart)="this.classes(selectCurso.value)"  (change)="this.classes(selectCurso.value)" class="form-select" required>
+                    <option selected value='1'>...</option>
+                    <option *ngFor=" let curso of listaCursos" value={{curso.id}}>{{curso.nomeCurso}}
+                  </option>
+                </select>
+              </div>
+
+              <div *ngIf="listaClasse " class="col-md-12 mt-4">
+                <div *ngIf="listaClasse.length>0">
+                    <label>Classe </label>
+                    <select #selectClasse class="form-select" required>
+                      <option *ngFor=" let classe of listaClasse" value={{classe.id}}>{{classe.descricaoClasse}}
+                      </option>
+                    </select>
+                </div>
+                <div *ngIf="listaClasse.length===0">
+                    <label>Sem Classes Cadastradas para este Curso!!! </label>
+
+                </div>
+              </div>
+
+              <div *ngIf="listaProfessores && listaProfessores.length>0 && listaClasse && listaClasse.length>0" class="col-md-12 mt-4">
+                <label>Professor Principal </label>
+                <select #selectProfessor class="form-select" required>
+                  <option *ngFor=" let professor of listaProfessores" value={{professor.id}}>{{professor.nomeProfessor}}
+                  </option>
+                </select>
+              </div>
+  
+              <div class="confirmar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+              </div>
+  
+              <div class="cancelar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

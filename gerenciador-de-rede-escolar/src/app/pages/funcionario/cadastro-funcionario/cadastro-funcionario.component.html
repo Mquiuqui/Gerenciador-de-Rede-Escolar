@@ -1,43 +1,51 @@
-<div class="form-body">
+<div class="form-body" *ngIf="AcessoId === 1 || AcessoId === 2 || AcessoId === 3 || AcessoId === 4">
   <div class="row">
     <div class="form-holder">
       <div class="form-content">
         <div class="form-items">
           <h3>Cadastro de Funcionário</h3>
-          <form class="requires-validation" novalidate>
+          <form (submit)="this.submit($event)" class="requires-validation" novalidate>
 
+            <div class="form-check mt-4">
+                <input class="form-check-input" (change)="flagProfessor = flagProfessor===true?false:true" type="checkbox"
+                  value="" id="invalidCheck" required>
+                <label class="form-check-label">Funcionário Professor</label>
+                <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+              </div>
+  
             <div class="col-md-12">
+
               <input class="form-control" type="text" name="nome" placeholder="Nome : " required>
               <input class="form-control" type="text" name="nome" placeholder="Email : " required>
               <input class="form-control" type="text" name="nome" placeholder="Senha : " required>
-
+              <input class="form-control" type="text" name="nome" placeholder="Descrição Cargo : " required>
+              
               <!-- <div class="valid-feedback">Username field is valid!</div>
-                             <div class="invalid-feedback">Username field cannot be blank!</div> -->
+                <div class="invalid-feedback">Username field cannot be blank!</div> -->
+            </div>
+            
+            <div class="col-md-12  mt-3">
+                <input class="form-control" type="number" name="sal" placeholder="Salário : " required>
             </div>
 
-            <div class="col-md-12  mt-3">
-              <input class="form-control" type="number" name="sal" placeholder="Salário : " required>
-            </div>
-
-            <div class="col-md-12  mt-3">
-              <input class="form-control" type="number" name="depto" placeholder="Departamento : " required>
-            </div>
-
-            <div class="col-md-12  mt-3">
-              <label>Cargo: </label>
-              <select #cargoSelect (change)="this.changeCargo(cargoSelect.value)" class="form-select"
-                aria-placeholder="Cargo" required>
-                <option value="1">Funcionario</option>
-                <option value="2">Professor</option>
-                <option value="2">Outro</option>
+            <div *ngIf="!flagProfessor" class="col-md-12 mt-4">
+              <label>Departamento </label>
+              <select class="form-select" required>
+                <option *ngFor=" let depart of listaDepartamentos" value={{depart.id}}>{{depart.nomeDepartamento}}
+                </option>
               </select>
-             
             </div>
-            <div *ngIf="this.cargo === '2'">
-                <div class="col-md-12  mt-3">
-                    <input class="form-control" type="number" name="sal" placeholder="Curso : " required>
-                  </div>
+
+            <div *ngIf="flagProfessor" class="col-md-12 mt-4">
+              <label>Curso </label>
+              <select class="form-select" required>
+                <option *ngFor=" let curso of listaCursos" value={{curso.id}}>{{curso.nomeCurso}}
+                </option>
+              </select>
             </div>
+
+
+
 
             <div class="confirmar form-button mt-3 d-flex justify-content-center">
               <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>

@@ -26,6 +26,8 @@ import { CadastroFuncionarioComponent } from './pages/funcionario/cadastro-funci
 import { FlashMessageComponent } from './components/flash-message/flash-message.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CadastroClasseComponent } from './pages/classe/cadastro-classe/cadastro-classe.component';
+import { DisciplinasComponent } from './pages/disciplinas/disciplinas.component';
+import { CadastroDisciplinasComponent } from './pages/disciplinas/cadastro-disciplinas/cadastro-disciplinas.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { CadastroClasseComponent } from './pages/classe/cadastro-classe/cadastro
     CadastroFuncionarioComponent,
     FlashMessageComponent,
     PerfilComponent,
-    CadastroClasseComponent
+    CadastroClasseComponent,
+    DisciplinasComponent,
+    CadastroDisciplinasComponent
   ],
   imports: [
     BrowserModule,

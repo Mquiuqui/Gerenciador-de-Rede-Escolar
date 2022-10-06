@@ -14,7 +14,7 @@ export class ListarMatriculasComponent implements OnInit {
   rota: Router
   user: AccountService
   AcessoId: number
-  listaMatriculas: any[] =[]
+  listaMatriculas: any[] = []
   constructor(
     private router: Router,
     private service: ListarMatriculasService,
@@ -23,18 +23,18 @@ export class ListarMatriculasComponent implements OnInit {
     this.rota = this.router
     this.user = this.auth
   }
-    ngOnInit(): void {
-        this.cursos()
-        }
+  ngOnInit(): void {
+    this.cursos()
+  }
 
-    async cursos(){
-        let response = (await lastValueFrom(this.service.getMatriculas())).listaResultados
-        this.listaMatriculas = response
-    }
+  async cursos() {
+    let response = (await lastValueFrom(this.service.getMatriculas())).listaResultados
+    this.listaMatriculas = response
+  }
 
-    async aprovar(id:string){
-      let response = (await lastValueFrom(this.service.aprovar(id))).listaResultados
-      this.listaMatriculas = response
+  async aprovar(id: string) {
+    let response = (await lastValueFrom(this.service.aprovar(id))).listaResultados
+    this.listaMatriculas = response
   }
 
 }

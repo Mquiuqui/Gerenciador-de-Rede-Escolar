@@ -9,6 +9,8 @@ import { CadastroClasseComponent } from './pages/classe/cadastro-classe/cadastro
 import { ClasseComponent } from './pages/classe/classe.component';
 import { CadastrosComponent } from './pages/cursos/cadastros/cadastros.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
+import { CadastroDisciplinasComponent } from './pages/disciplinas/cadastro-disciplinas/cadastro-disciplinas.component';
+import { DisciplinasComponent } from './pages/disciplinas/disciplinas.component';
 import { CadastroFuncionarioComponent } from './pages/funcionario/cadastro-funcionario/cadastro-funcionario.component';
 import { FuncionarioComponent } from './pages/funcionario/funcionario.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -47,6 +49,9 @@ const routes: Routes = [
   
   {path:'vizualizar_boletos', component: VisualizarBoletosComponent, canActivate:[AuthGuard]},
 
+  {path:'listar_disciplinas', component: DisciplinasComponent, canActivate:[AuthGuard]},
+  {path:'cadastro_disciplinas', component: CadastroDisciplinasComponent, canActivate:[AuthGuard]},
+  
   {path:'listar_funcionario', component: FuncionarioComponent, canActivate:[AuthGuard]},
   {path:'cadastro_funcionario', component: CadastroFuncionarioComponent, canActivate:[AuthGuard]},
 

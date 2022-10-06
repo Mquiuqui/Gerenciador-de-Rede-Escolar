@@ -1,0 +1,88 @@
+<div class="form-body" *ngIf="AcessoId === 1 || AcessoId === 2 ">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <div class="cancelar form-button mb-4 d-flex ">
+              <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Voltar</button>
+            </div>
+            <div class="d-flex flex-row">
+              <label style="font-size: xx-large;font-weight: 700 ;">Disciplinas Cadastrados</label>
+              <div class="ml-auto p-2">
+                <label (click)="this.rota.navigate(['cadastro_disciplinas'])" class="adicionar"
+                  style="font-size: larger;font-weight: 700 ;">Cadastrar</label>
+              </div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="font-weight: 700 ;" scope="col">Id</th>
+                  <th style="font-weight: 700 ;" scope="col">Disciplina</th>
+                  <th style="font-weight: 700 ;" scope="col">Professor</th>
+                  <th style="font-weight: 700 ;" scope="col">Curso</th>
+                  <th style="font-weight: 700 ;" scope="col">Classe</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let disciplina of listaDisciplinas">
+  
+                  <th scope="row">{{disciplina.id}}</th>
+                  <td>{{disciplina.nomeDisciplina}}</td>
+                  <td>{{disciplina.idProfessor2.nomeProfessor}}</td>
+                  <td>{{disciplina.codigoCurso2.nomeCurso}}</td>
+                  <td>{{disciplina.codigoClasse2.descricaoClasse}}</td>
+                  <td class="editar">Visualizar</td>
+  
+                </tr>
+  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- PROFESSORES  -->
+  <div class="form-body" *ngIf="AcessoId === 4 ">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <div class="cancelar form-button mb-4 d-flex ">
+              <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Voltar</button>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="font-weight: 700 ;" scope="col">Id</th>
+                  <th style="font-weight: 700 ;" scope="col">Disciplina</th>
+                  <th style="font-weight: 700 ;" scope="col">Professor</th>
+                  <th style="font-weight: 700 ;" scope="col">Curso</th>
+                  <th style="font-weight: 700 ;" scope="col">Classe</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let disciplina of listaDisciplinas">
+  
+                  <th scope="row">{{disciplina.id}}</th>
+                  <td>{{disciplina.nomeDisciplina}}</td>
+                  <td>{{disciplina.idProfessor2.nomeProfessor}}</td>
+                  <td>{{disciplina.codigoCurso2.nomeCurso}}</td>
+                  <td>{{disciplina.codigoClasse2.descricaoClasse}}</td>
+                  <td class="editar">Expandir</td>
+  
+                </tr>
+  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

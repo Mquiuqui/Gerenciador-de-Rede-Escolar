@@ -27,7 +27,7 @@ export class UserController {
     @Post('/funcionario/login')
     async loginFuncionario(req: Request) {
 
-        let a = await this.defaultRepositoryFuncionario.findOne({where:{id:Number(req.body.login),senha:req.body.senha},relations:{codigoDepartamento2:{idAcesso:true}}})
+        let a = await this.defaultRepositoryFuncionario.findOne({where:{id:Number(req.body.login),senha:req.body.senha},relations:{codigoDepartamento2:{idAcesso:true}, professors:true}})
         console.log(a)
         if(!a) throw new BadRequestException("login não encontrado")
         return a
