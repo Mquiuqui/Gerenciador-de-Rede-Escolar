@@ -47,7 +47,7 @@ export class DisciplinaController {
         novaDisciplina.codigoCurso = req.body.codigoCurso
         novaDisciplina.codigoClasse = req.body.codigoClasse
         novaDisciplina.idProfessor = req.body.idProfessor
-        
+        console.log(novaDisciplina)
         return this.defaultRepository.save(novaDisciplina)
 
     }

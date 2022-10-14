@@ -10,9 +10,17 @@ export class VisualizarMatriculaService {
 
   constructor(private http: HttpClient) { }
 
-  getMatricula(id:string) {
+  getMatricula(id: string) {
 
-    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Matricula/`+id)
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Matricula/` + id)
 
+  }
+
+  getClasses(id: string) {
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Classes/`+id)
+  }
+
+  aprovar(id:string,idClasse:string) {
+    return this.http.post<IApiReturn<any>>(`http://localhost:3333/aprovarMatricula`,{id:id,idClasse:idClasse})
   }
 }

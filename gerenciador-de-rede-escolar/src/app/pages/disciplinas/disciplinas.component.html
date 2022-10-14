@@ -33,7 +33,7 @@
                   <td>{{disciplina.idProfessor2.nomeProfessor}}</td>
                   <td>{{disciplina.codigoCurso2.nomeCurso}}</td>
                   <td>{{disciplina.codigoClasse2.descricaoClasse}}</td>
-                  <td class="editar">Visualizar</td>
+                  <td (click)="this.rota.navigate(['/detalhe_disciplinas/'+disciplina.id])" class="editar">Expandir</td>
   
                 </tr>
   
@@ -74,10 +74,9 @@
                   <td>{{disciplina.idProfessor2.nomeProfessor}}</td>
                   <td>{{disciplina.codigoCurso2.nomeCurso}}</td>
                   <td>{{disciplina.codigoClasse2.descricaoClasse}}</td>
-                  <td class="editar">Expandir</td>
+                  <td (click)="this.rota.navigate(['/detalhe_disciplinas/'+disciplina.id])" class="editar">Expandir</td>
   
                 </tr>
-  
               </tbody>
             </table>
           </div>

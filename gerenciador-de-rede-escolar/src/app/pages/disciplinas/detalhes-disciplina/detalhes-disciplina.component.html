@@ -1,44 +1,158 @@
-<div class="form-body" *ngIf="AcessoId === 4 ">
-    <div class="row">
-        <div class="form-holder">
-            <div class="form-content">
-                <div class="form-items">
-                    <div class="cancelar form-button mb-4 d-flex ">
-                        <button id="submit" (click)="this.rota.navigate(['/home'])"
-                            class="btn btn-primary">Voltar</button>
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <div class="cancelar form-button mb-4 d-flex ">
+            <button id="submit" (click)="this.rota.navigate(['listar_disciplinas'])" class="btn btn-primary">Voltar</button>
+          </div>
+          <div class="d-flex flex-row">
+            <label style="font-size: xx-large;font-weight: 700 ;">Alunos da Disciplina</label>
+            <div class="ml-auto  p-2">
+              <label (click)="this.rota.navigate(['listar_atividades/'+this.idDisciplina])" class="adicionar m-2"
+                style="font-size: larger;font-weight: 700 ;">Atividades</label>
+              <label (click)="this.rota.navigate(['listar_chamadas'])" class="adicionar"
+                style="font-size: larger;font-weight: 700 ;">Chamadas</label>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="font-weight: 700 ;" scope="col">Id</th>
+                <th style="font-weight: 700 ;" scope="col">Nome Aluno</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let aluno of listaAlunos">
+
+                <th scope="row">{{aluno.id}}</th>
+                <td>{{aluno.nomeAluno}}</td>
+                <td (click)="setAluno(aluno.id)" class="editar">Nota</td>
+                <td (click)="setAlunoOcorrencia(aluno.id)" class="editar">Ocorrencia</td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal #ModalNota>
+  <div id="termosDeUso" taria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center w-100">Cadastrar Nota</h5>
+        </div>
+        <form (submit)="this.submit($event)">
+            
+            <div class="modal-body text-justify d-flex justify-content-center">
+  
+              <select #selectAtividade (change)="this.setAtividade(selectAtividade.value)" class="form-select mt-3" required>
+                <option selected disabled value="">Selecione a Atividade: </option>
+                <option *ngFor=" let atividade of listaAtividades" value={{atividade.id}}>{{atividade.tituloAtividade}}
+                </option>
+  
+              </select>
+  
+            </div>
+
+            <div *ngIf="atividadeSelecionada">
+                <div *ngIf="notaAluno.length === 0">
+                    <div class="modal-body text-justify d-flex justify-content-center">
+                        <h5 class="modal-title text-center w-100">Nova Nota: </h5>
+                        <input class="modal-body form-control" type="text" name="nome" placeholder="Insira o valor da nota: "
+                        required>
                     </div>
-                    <div class="d-flex flex-row">
-                        <label style="font-size: xx-large;font-weight: 700 ;">Alunos da Disciplina</label>
-                        <div class="ml-auto p-2">
-                            <label (click)="this.rota.navigate(['listar_atividades'])" class="adicionar"
-                                style="font-size: larger;font-weight: 700 ;">Atividades</label>
-                            <label (click)="this.rota.navigate(['listar_chamadas'])" class="adicionar"
-                                style="font-size: larger;font-weight: 700 ;">Chamadas</label>
-                        </div>
+                </div>
+    
+                <div *ngIf="notaAluno.length > 0">
+                    <div class="modal-body text-justify d-flex justify-content-center">
+                        <h6 class="modal-title text-center w-100">Nota Cadastrada Anteriormente: </h6>
+                        <input [value]="notaAluno[0].nota" class="modal-body form-control" type="text" name="nome" placeholder="Insira o valor da nota: "
+                        required>
                     </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th style="font-weight: 700 ;" scope="col">Id</th>
-                                <th style="font-weight: 700 ;" scope="col">Nome Aluno</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let disciplina of listaDisciplinas">
-
-                                <th scope="row">{{disciplina.id}}</th>
-                                <td>{{disciplina.nomeDisciplina}}</td>
-                                <td class="editar">Nota</td>
-                                <td class="editar">Ocorrencia</td>
-
-                            </tr>
-
-                        </tbody>
-                    </table>
                 </div>
             </div>
-        </div>
+           
+
+          <div class="modal-footer mt-4">
+            <button type="submit" class="btnModal btn-secondary" data-dismiss="modal">Registrar Nota</button>
+          </div>
+        </form>
+
+      </div>
     </div>
+  </div>
+</app-modal>
+
+
+
+<div class="modal" id="termosDeUso" taria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center w-100">Cadastrar Atividade</h5>
+
+
+      </div>
+
+      <div class="modal-body text-justify d-flex justify-content-center">
+        <input class="modal-body form-control" type="text" name="nome" placeholder="Título da Atividade: " required>
+      </div>
+
+      <div class="modal-body text-justify d-flex justify-content-center">
+        <select class="form-select mt-3" required>
+          <option selected disabled value="">Selecione a Disciplina: </option>
+          <option value="1">Nome da Disciplina</option>
+        </select>
+      </div>
+
+      <div class="modal-body text-justify d-flex justify-content-center">
+        <input class="modal-body form-control" type="text" name="nome" placeholder="Data de Entrega: " required>
+      </div>
+
+
+      <div class="modal-footer mt-4">
+        <button type="button" class="btnModal btn-secondary" data-dismiss="modal">Registrar</button>
+
+      </div>
+    </div>
+  </div>
 </div>
+
+<app-modal #ModalOcorrencia>
+  <div id="termosDeUso" taria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center w-100">Cadastrar Ocorrência</h5>
+        </div>
+  
+        <form (submit)="this.submitOcorrencia($event)">
+
+          <div class="modal-body textarea form-group">
+            <textarea type="text" rows="4" name="textarea" id="textarea" class=" w-100"
+              placeholder="Descreva a ocorrência, se necessário:*"></textarea>
+          </div>
+  
+          <div class="modal-body text-justify d-flex justify-content-center">
+            <input class="modal-body form-control" type="date" name="dateOco" required>
+          </div>
+
+          <div class="modal-footer mt-4">
+            <button type="submit" class="btnModal btn-secondary" data-dismiss="modal">Registrar Ocorrência</button>
+    
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  
+</app-modal>

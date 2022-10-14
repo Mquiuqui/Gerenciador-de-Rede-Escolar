@@ -40,7 +40,7 @@ export class CadastrosComponent implements OnInit {
         }
         
         let response = (await lastValueFrom(this.service.sendCurso(data)))
-        console.log(response)
+        this.rota.navigate(['cursos'])
 
 
     }

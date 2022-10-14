@@ -1,4 +1,4 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
+import { Column, Entity, Index, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Aluno } from "./Aluno";
 import { Atividade } from "./Atividade";
 
@@ -6,7 +6,7 @@ import { Atividade } from "./Atividade";
 @Index("FOREIGNKEY_NOTA_ALUNO_idx", ["rgmAluno"], {})
 @Entity("nota", { schema: "prjescola" })
 export class Nota {
-  @Column("int", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("double", { name: "nota", nullable: true, precision: 22 })

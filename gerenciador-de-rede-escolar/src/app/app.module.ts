@@ -34,6 +34,7 @@ import { CadastrarAtividadeComponent } from './pages/atividades/cadastrar-ativid
 import { NotasComponent } from './pages/notas/notas.component';
 import { OcorrenciasComponent } from './pages/ocorrencias/ocorrencias.component';
 import { ChamadasComponent } from './pages/chamadas/chamadas.component';
+import { ModalModule } from './components/modal/modal.modules';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { ChamadasComponent } from './pages/chamadas/chamadas.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

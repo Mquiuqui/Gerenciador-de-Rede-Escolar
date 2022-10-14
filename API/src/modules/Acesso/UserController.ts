@@ -6,6 +6,7 @@ import { Departamento } from '../../entity/Departamento'
 import { GrupoAcesso } from '../../entity/GrupoAcesso'
 import { Aluno } from '../../entity/Aluno'
 import { Funcionario } from '../../entity/Funcionario'
+import { Disciplina } from '../../entity/Disciplina'
 
 
 export class UserController {
@@ -13,9 +14,11 @@ export class UserController {
     private defaultRepository = AppDataSource.getRepository(Departamento)
     private defaultRepositoryMatricula = AppDataSource.getRepository(Aluno)
     private defaultRepositoryFuncionario = AppDataSource.getRepository(Funcionario)
+    private defaultRepositoryDisciplina = AppDataSource.getRepository(Disciplina)
 
     @Post('/aluno/login')
     async login(req: Request) {
+        
         let a = await this.defaultRepositoryMatricula.findOne({where:{id:Number(req.body.login),senhaAluno:req.body.senha},relations: ['codigoCurso2', 'codigoCurso2.idTurno2', 'codigoClasse2']})
         if(!a) throw new BadRequestException("login não encontrado")
         console.log(a)
@@ -74,15 +77,30 @@ export class UserController {
 
     }
 
+    @Get('/MatriculaDisciplina/:id')
+    async allDisciplina(req: Request) {
+
+        let response = await this.defaultRepositoryDisciplina.find({where:{id:Number(req.params.id)}})
+        
+        if(!response) throw new BadRequestException("Disciplina não encontrada")
+
+        let alunos = await this.defaultRepositoryMatricula.find({where:{codigoClasse:response[0].codigoClasse!},relations: ['codigoCurso2', 'codigoCurso2.idTurno2', 'codigoClasse2']})
+        console.log(alunos)
+        return alunos
+
+    }
+
+
     @Post('/aprovarMatricula')
     async aprovarMatricula(req: Request) {
         let matricula = await this.defaultRepositoryMatricula.findOne({where:{id:Number(req.body.id)}})
         if(!matricula) throw new BadRequestException("Matricula não encontrada")
         matricula.flagMatriculaAceita = 1
+        matricula.codigoClasse = Number(req.body.idClasse)
 
         let matriculaaprovada = await this.defaultRepositoryMatricula.save(matricula)
     
-        return matricula
+        return matriculaaprovada
         
         
     }

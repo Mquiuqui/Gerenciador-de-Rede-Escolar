@@ -46,6 +46,10 @@ export class MatriculaComponent implements OnInit {
         
         let response = (await lastValueFrom(this.service.sendMatricula(data)))
         console.log(response)
+        if(!response.flagErro){
+            this.rota.navigate(['home'])
+            
+        } 
 
 
     }
