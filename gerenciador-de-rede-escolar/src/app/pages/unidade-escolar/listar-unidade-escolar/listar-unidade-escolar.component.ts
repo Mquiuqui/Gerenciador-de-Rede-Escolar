@@ -19,7 +19,7 @@ export class ListarUnidadeEscolarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public authService: ListarUnidadesService,
+    public service: ListarUnidadesService,
     private auth: AccountService
   ) {
     this.rota = this.router
@@ -27,6 +27,11 @@ export class ListarUnidadeEscolarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.unidades()
+  }
+
+  async unidades() {
+    let response = (await lastValueFrom(this.service.getUnidades())).listaResultados.this.listaUnidade
   }
 
 

@@ -1,3 +1,4 @@
+import { ListarUnidadeEscolarComponent } from './pages/unidade-escolar/listar-unidade-escolar/listar-unidade-escolar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
@@ -31,37 +32,38 @@ import { VisualizarBoletosComponent } from './pages/visualizar-boletos/visualiza
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'', component: LandingPageComponent},
-  
+
   {path:'home', component: HomeComponent, canActivate:[AuthGuard]},
   {path:'perfil_editar', component: PerfilComponent, canActivate:[AuthGuard]},
-  
+
   {path:'matricula', component: MatriculaComponent},
   {path:'listar_matriculas', component: ListarMatriculasComponent, canActivate:[AuthGuard]},
   {path:'visualizar_matricula/:id', component: VisualizarMatriculaComponent, canActivate:[AuthGuard]},
-  
+
   {path:'unidade_escolar', component: UnidadeEscolarComponent, canActivate:[AuthGuard]},
   {path:'cadastroUE', component: CadastroUeComponent, canActivate:[AuthGuard]},
- 
+  {path: 'listar_unidades', component: ListarUnidadeEscolarComponent, canActivate:[AuthGuard]},
+
   {path:'ano_letivo', component: AnoLetivoComponent, canActivate:[AuthGuard]},
   {path:'cadastro_ano_letivo', component: CadastroAnoLetivoComponent, canActivate:[AuthGuard]},
 
   {path:'cursos', component: CursosComponent, canActivate:[AuthGuard]},
   {path:'cadastro_curso', component: CadastrosComponent, canActivate:[AuthGuard]},
-  
+
   {path:'classe', component: ClasseComponent, canActivate:[AuthGuard]},
   {path:'cadastro_classe', component: CadastroClasseComponent, canActivate:[AuthGuard]},
-  
+
   {path:'vizualizar_boletos', component: VisualizarBoletosComponent, canActivate:[AuthGuard]},
-  
+
   {path:'listar_ocorrencia', component: OcorrenciasComponent, canActivate:[AuthGuard]},
   {path:'listar_notas', component: NotasComponent, canActivate:[AuthGuard]},
-  
+
   {path:'listar_atividades/:id', component: AtividadesComponent, canActivate:[AuthGuard]},
-  
+
   {path:'listar_disciplinas', component: DisciplinasComponent, canActivate:[AuthGuard]},
   {path:'cadastro_disciplinas', component: CadastroDisciplinasComponent, canActivate:[AuthGuard]},
   {path:'detalhe_disciplinas/:id', component: DetalhesDisciplinaComponent, canActivate:[AuthGuard]},
-  
+
   {path:'listar_funcionario', component: FuncionarioComponent, canActivate:[AuthGuard]},
   {path:'cadastro_funcionario', component: CadastroFuncionarioComponent, canActivate:[AuthGuard]},
 
