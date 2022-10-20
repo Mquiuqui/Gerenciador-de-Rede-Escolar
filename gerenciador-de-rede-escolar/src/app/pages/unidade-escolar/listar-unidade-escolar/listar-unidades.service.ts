@@ -13,7 +13,7 @@ export class ListarUnidadesService {
 
   getUnidades() {
 
-    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Matriculas`)
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Unidades`)
   }
 
 
