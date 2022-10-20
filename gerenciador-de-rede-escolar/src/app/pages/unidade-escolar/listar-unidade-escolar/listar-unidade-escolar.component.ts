@@ -1,9 +1,9 @@
 import { ListarUnidadesService } from './listar-unidades.service';
-import { UnidadeEscolar } from './../../../model/UnidadeEscolar';
 import { lastValueFrom } from 'rxjs';
 import { AccountService } from 'src/app/core/auth/auth.account.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { UnidadeEscolar } from 'src/app/model/UnidadeEscolar';
 
 @Component({
   selector: 'app-listar-unidade-escolar',
@@ -16,6 +16,7 @@ export class ListarUnidadeEscolarComponent implements OnInit {
   user: AccountService
   AcessoId: number
   listaUnidade: UnidadeEscolar[]
+  unidade: UnidadeEscolar = new UnidadeEscolar()
 
   constructor(
     private router: Router,
@@ -26,12 +27,14 @@ export class ListarUnidadeEscolarComponent implements OnInit {
     this.user = this.auth
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.unidades()
   }
 
-  async unidades() {
-    let response = (await lastValueFrom(this.service.getUnidades())).listaResultados.this.listaUnidade
+  unidades(){
+    this.service.getUnidades().subscribe((resp: UnidadeEscolar[]) => {
+      this.listaUnidade = resp
+    })
   }
 
 
