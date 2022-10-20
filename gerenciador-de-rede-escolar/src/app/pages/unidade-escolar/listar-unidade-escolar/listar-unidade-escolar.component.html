@@ -7,22 +7,23 @@
             <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Voltar</button>
           </div>
           <div class="d-flex flex-row">
-            <label style="font-size: xx-large;font-weight: 700 ;">Matriculas Pendentes</label>
+            <label style="font-size: xx-large;font-weight: 700 ;">Unidades Escolares Cadastradas</label>
           </div>
           <table class="table">
             <thead>
               <tr>
                 <th style="font-weight: 700 ;" scope="col">Id</th>
-                <th style="font-weight: 700 ;" scope="col">Nome</th>
+                <th style="font-weight: 700 ;" scope="col">Nome da Unidade</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let matricula of listaMatriculas">
+              <tr *ngFor="let unidade of listaUnidade">
 
-                <th scope="row">{{matricula.id}}</th>
-                <td>{{matricula.nomeAluno}}</td>
-                <td class="editar" (click)="this.rota.navigate(['visualizar_matricula/'+matricula.id])">Visualizar</td>
+                <th scope="row">{{{unidade.id}}</th>
+                <td>{{unidade.nomeEscola}}</td>
+                <td class="editar" (click)="this.rota.navigate(['unidade_escolar/'+ unidade.id])">Visualizar</td>
+                <td class="editar">Editar</td>
 
 
               </tr>

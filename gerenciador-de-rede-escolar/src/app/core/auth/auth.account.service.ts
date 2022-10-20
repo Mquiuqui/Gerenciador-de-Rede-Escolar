@@ -35,12 +35,12 @@ export class AccountService {
         // const user = bd.find(u => u.id === Number(login) && u.password === password)
         // console.log(user)
         try {
-            console.log("teste")          
+            console.log("teste")
             const response$ = this.http.post<IApiReturn<any>>(`http://localhost:3333/aluno/login`, {
                 login:Number(login),
                 senha:password
             })
-            
+
             const response = (await lastValueFrom(response$))
 
             if (!response.flagErro) {
@@ -69,12 +69,12 @@ export class AccountService {
         // const user = bd.find(u => u.id === Number(login) && u.password === password)
         // console.log(user)
         try {
-            console.log("teste")          
+            console.log("teste")
             const response$ = this.http.post<IApiReturn<any>>(`http://localhost:3333/funcionario/login`, {
                 login:Number(login),
                 senha:password
             })
-            
+
             const response = (await lastValueFrom(response$))
 
             if (!response.flagErro) {

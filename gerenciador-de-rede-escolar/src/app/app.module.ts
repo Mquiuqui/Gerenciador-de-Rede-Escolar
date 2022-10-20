@@ -35,6 +35,8 @@ import { NotasComponent } from './pages/notas/notas.component';
 import { OcorrenciasComponent } from './pages/ocorrencias/ocorrencias.component';
 import { ChamadasComponent } from './pages/chamadas/chamadas.component';
 import { ModalModule } from './components/modal/modal.modules';
+import { ListarUnidadeEscolarComponent } from './pages/unidade-escolar/listar-unidade-escolar/listar-unidade-escolar.component';
+import { ModelComponent } from './model/model.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { ModalModule } from './components/modal/modal.modules';
     CadastrarAtividadeComponent,
     NotasComponent,
     OcorrenciasComponent,
-    ChamadasComponent
+    ChamadasComponent,
+    ListarUnidadeEscolarComponent,
+    ModelComponent
   ],
   imports: [
     BrowserModule,
