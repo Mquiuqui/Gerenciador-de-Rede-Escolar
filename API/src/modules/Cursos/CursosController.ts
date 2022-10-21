@@ -41,8 +41,14 @@ export class CursoController {
     @Post('/Cursos')
     async saveCursos(req: Request) {
         console.log("tesrwe")
+
+        let existe = await this.defaultRepository.findOne({where:{nomeCurso:req.body.nomeCurso}})
+
+        if(existe) throw new Error('Curso já cadastrado')
+
         let novoCurso = new Curso()
 
+        if(req.body.nomeCurso.length === 0) throw new Error('Curso não informado')
         novoCurso.idEscola = Number(req.body.idEscola)
         novoCurso.nomeCurso = req.body.nomeCurso
         novoCurso.idTurno = Number(req.body.idTurno)

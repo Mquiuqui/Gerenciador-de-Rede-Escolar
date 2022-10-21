@@ -40,6 +40,10 @@ export class ClasseController {
 
         let novaClasse = new Classe()
 
+        if(req.body.codigoCurso.length === 0) throw new Error('Curso não informado')
+        if(req.body.descricaoClasse.length === 0) throw new Error('Descrição da classe não informada')
+        if(req.body.quantidadeAlunos.length === 0 || Number(req.body.quantidadeAlunos) <= 0) throw new Error('Quantidade de alunos não informada')
+        if(req.body.quantidadeAlunosEspeciais.length === 0 || Number(req.body.quantidadeAlunosEspeciais) <= 0) throw new Error('Quantidade de alunos especiais não informada')
         novaClasse.codigoCurso = Number(req.body.codigoCurso)
         novaClasse.descricaoClasse = req.body.descricaoClasse
         novaClasse.quantidadeAlunos = Number(req.body.quantidadeAlunos)

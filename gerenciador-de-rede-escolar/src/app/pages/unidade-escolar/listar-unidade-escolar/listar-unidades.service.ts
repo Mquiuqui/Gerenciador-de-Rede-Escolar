@@ -14,8 +14,8 @@ export class ListarUnidadesService {
   ) { }
 
 
-  getUnidades(): Observable<UnidadeEscolar[]>{
-    return this.http.get<UnidadeEscolar[]>('http://localhost:3333/Unidades')
+  getUnidades(){
+    return this.http.get<IApiReturn<UnidadeEscolar[]>>(`http://localhost:3333/Unidades`)
   }
 
 

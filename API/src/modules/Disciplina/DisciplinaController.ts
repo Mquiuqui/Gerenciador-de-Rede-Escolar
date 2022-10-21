@@ -42,7 +42,7 @@ export class DisciplinaController {
     saveUnidade(req: Request) {
 
         let novaDisciplina = new Disciplina()
-
+        if(req.body.nomeDisciplina.length === 0) throw new Error('Nome da Disciplina não informado')
         novaDisciplina.nomeDisciplina = req.body.nomeDisciplina
         novaDisciplina.codigoCurso = req.body.codigoCurso
         novaDisciplina.codigoClasse = req.body.codigoClasse

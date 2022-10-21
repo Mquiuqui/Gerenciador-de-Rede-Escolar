@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { CadastrosService } from './cadastros.service';
+import { FlashMessageService } from 'src/app/components/flash-message/flash-message.service';
 
 @Component({
     selector: 'app-cadastros',
@@ -16,6 +17,7 @@ export class CadastrosComponent implements OnInit {
     constructor(
         private route: Router,
         private service: CadastrosService,
+        private flash: FlashMessageService
     ) {
         this.rota = this.route
     }
@@ -38,9 +40,17 @@ export class CadastrosComponent implements OnInit {
             idTurno:evt.target[1].value,
             idEscola:evt.target[2].value
         }
-        
-        let response = (await lastValueFrom(this.service.sendCurso(data)))
-        this.rota.navigate(['cursos'])
+        try{
+            let response = (await lastValueFrom(this.service.sendCurso(data)))
+            if(response.flagErro) {
+                this.flash.show(response.listaMensagens[0], 'error')
+                return
+            }
+            this.rota.navigate(['cursos'])
+
+        }catch(error){
+            this.flash.show(error.error.listaMensagens[0], 'error')
+        }
 
 
     }

@@ -28,14 +28,21 @@ export class ListarUnidadeEscolarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.unidades()
+    this.load()
   }
 
-  unidades(){
-    this.service.getUnidades().subscribe((resp: UnidadeEscolar[]) => {
-      this.listaUnidade = resp
-    })
+  async load() {
+
+    let response = (await lastValueFrom(this.service.getUnidades())).listaResultados
+    console.log(response)
+    this.listaUnidade = response
+
   }
+  // unidades(){
+  //   this.service.getUnidades().subscribe((resp: UnidadeEscolar[]) => {
+  //     this.listaUnidade = resp
+  //   })
+  // }
 
 
 

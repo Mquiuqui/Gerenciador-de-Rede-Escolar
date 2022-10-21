@@ -17,4 +17,8 @@ export class CadastroUeService {
   getCursos() {
     return this.http.get<IApiReturn<any>>(`http://localhost:3333/Cursos`)
   }
+
+  getUnidadeEscolar() {
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Unidades`)
+  }
 }

@@ -1,50 +1,42 @@
-<div class="wrapper">
- 
-    <!-- Page Content  -->
-    <div id="content">
-  
-      <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      
-      </nav> -->
-      <div class="row d-flex">
-          <div class="col-md-6">
-            
-            <div class="card border-0">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4 class="card-title mt-4">Faltas</h4>
-                </div>
-              </div>
-            </div>
-  
-            <div class="card border-0">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4 class="card-title mt-4">Notas</h4>
-                </div>
-              </div>
-            </div>
-  
-            <div class="card border-0">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4 class="card-title mt-4">Ocorrências</h4>
-                </div>
-              </div>
-            </div>
-  
-            <div class="card border-0">
-              <div class="card-body">
-                <div class="col-md-12">
-                  <h4 class="card-title mt-4">Boletos</h4>
-                </div>
-              </div>
-            </div>
-  
+<div class="form-body">
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <div class="cancelar form-button mb-4 d-flex ">
+            <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Voltar</button>
           </div>
-        </div>
-  
-    </div>
+          <div class="d-flex flex-row">
+            <label style="font-size: xx-large;font-weight: 700 ;">Funcionários Cadastrados</label>
+            <div class="ml-auto p-2">
+              <label (click)="this.rota.navigate(['cadastroUE'])" class="adicionar"
+                style="font-size: larger;font-weight: 700 ;">Cadastrar</label>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="font-weight: 700 ;" scope="col">Id</th>
+                <th style="font-weight: 700 ;" scope="col">Nome Unidade</th>
+                <th style="font-weight: 700 ;" scope="col">End</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let unidade of listaUnidadeE">
 
+                <th scope="row">{{unidade.id}}</th>
+                <td>{{unidade.nomeEscola}}</td>
+                <td>{{unidade.endereco}}</td>
+                <td class="editar">Visualizar</td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-  
+</div>

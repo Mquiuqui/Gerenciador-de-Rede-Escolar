@@ -16,9 +16,9 @@ export class CadastroClasseComponent implements OnInit {
 
   constructor(
     private route: Router,
-    private service:CadastroClasseService,
+    private service: CadastroClasseService,
     private flashMessageService: FlashMessageService
-  ) { 
+  ) {
     this.rota = this.route
   }
 
@@ -40,11 +40,19 @@ export class CadastroClasseComponent implements OnInit {
       quantidadeAlunosEspeciais: evt.target[3].value
     }
 
-    let response = (await lastValueFrom(this.service.sendClasse(data)))
+    try {
+      let response = (await lastValueFrom(this.service.sendClasse(data)))
+      if (response.flagErro) {
+        this.flashMessageService.show(response.listaMensagens[0], 'error');
+        return
+      }
+      this.flashMessageService.show('Salvo com Sucesso', 'success');
+      this.rota.navigate(['/classe'])
 
-    if(!response.flagErro) this.flashMessageService.show(response.listaMensagens[0], 'error');
-    this.flashMessageService.show('Salvo com Sucesso', 'success');
-    this.rota.navigate(['/classe'])
+    } catch (error) {
+      this.flashMessageService.show(error.error.listaMensagens[0], 'error')
+    }
+
 
 
   }
