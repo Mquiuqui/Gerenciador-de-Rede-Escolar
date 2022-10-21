@@ -20,7 +20,7 @@
             <tbody>
               <tr *ngFor="let unidade of listaUnidade">
 
-                <th scope="row">{{{unidade.id}}</th>
+                <th scope="row">{{unidade.id}}</th>
                 <td>{{unidade.nomeEscola}}</td>
                 <td class="editar" (click)="this.rota.navigate(['unidade_escolar/'+ unidade.id])">Visualizar</td>
                 <td class="editar">Editar</td>
