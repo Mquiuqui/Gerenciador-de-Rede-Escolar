@@ -56,7 +56,10 @@ export class CadastroDisciplinasComponent implements OnInit {
     console.log(data)
     let response = (await lastValueFrom(this.service.sendDisciplina(data)))
 
-    if(!response.flagErro) this.flashMessageService.show(response.listaMensagens[0], 'error');
+    if(response.flagErro){
+      this.flashMessageService.show(response.listaMensagens[0], 'error');
+      return  
+    } 
     this.flashMessageService.show('Salvo com Sucesso', 'success');
     this.rota.navigate(['/listar_disciplinas'])
 

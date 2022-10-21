@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
     port: 3306,
     host: "127.0.0.1",
     username: "root",
-    password: "",
+    password: "123123",
     database: "prjEscola",
     synchronize: false,
     entities: [...Tables],

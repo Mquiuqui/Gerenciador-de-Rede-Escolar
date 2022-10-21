@@ -20,7 +20,8 @@
               <form>
                 <div class="form-group">
                   <label for="email" class="sr-only">Email</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="Email" [(ngModel)]="user.username" />
+                  <input type="text" name="email" id="email" class="form-control" placeholder="Email"
+                    [(ngModel)]="user.username" />
                 </div>
                 <div class="form-group mb-4">
                   <label for="password" class="sr-only">Senha</label>
@@ -29,8 +30,8 @@
                 </div>
                 <input (click)="this.submit()" name="login" id="login" class="btn btn-block login-btn mb-4"
                   type="button" value="Login Aluno">
-                <input (click)="this.submitFuncionario()" name="loginFunc" id="login" class="btn btn-block login-btn mb-4"
-                  type="button" value="Login Funcionário">
+                <input (click)="this.submitFuncionario()" name="loginFunc" id="login"
+                  class="btn btn-block login-btn mb-4" type="button" value="Login Funcionário">
               </form>
 
             </div>
