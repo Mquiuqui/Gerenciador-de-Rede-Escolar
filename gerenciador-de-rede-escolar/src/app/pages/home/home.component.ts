@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
     rota: Router
     user: AccountService
-    AcessoId:number
+    AcessoId: number
     constructor(
         private auth: AccountService,
         private route: Router
@@ -23,7 +23,14 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         console.log(this.user.userValue.idAcesso)
-        this.AcessoId = this.user.userValue.idAcesso? this.user.userValue.idAcesso : this.user.userValue.codigoDepartamento2.idAcesso.id
+        this.AcessoId = this.user.userValue.idAcesso ? this.user.userValue.idAcesso : this.user.userValue.codigoDepartamento2.idAcesso.id
+
+        setTimeout(() => {
+            if (this.user.userValue.ocorrencias.length > 0) {
+                alert('Você possui: ' + this.user.userValue.ocorrencias.length + ' ocorrências')
+            }
+        }, 2000)
+
     }
 
     logout() {
@@ -31,7 +38,7 @@ export class HomeComponent implements OnInit {
         this.auth.logout()
     }
 
-    info(){
+    info() {
         console.log("teste")
     }
 }

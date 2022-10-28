@@ -52,8 +52,6 @@ export class CadastroClasseComponent implements OnInit {
     } catch (error) {
       this.flashMessageService.show(error.error.listaMensagens[0], 'error')
     }
-
-
-
+    
   }
 }

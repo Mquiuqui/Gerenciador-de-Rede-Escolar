@@ -91,6 +91,6 @@ export class Aluno {
   @OneToMany(() => Nota, (nota) => nota.rgmAluno2)
   notas: Nota[];
 
-  @OneToMany(() => Ocorrencia, (ocorrencia) => ocorrencia.idAluno2)
+  @OneToMany(() => Ocorrencia, (ocorrencia) => ocorrencia.rgmAluno2)
   ocorrencias: Ocorrencia[];
 }
