@@ -11,7 +11,7 @@
             <div class="ml-auto  p-2">
               <label (click)="this.rota.navigate(['listar_atividades/'+this.idDisciplina])" class="adicionar m-2"
                 style="font-size: larger;font-weight: 700 ;">Atividades</label>
-              <label (click)="this.rota.navigate(['listar_chamadas'])" class="adicionar"
+              <label (click)="this.rota.navigate(['chamada/'+this.idDisciplina])" class="adicionar"
                 style="font-size: larger;font-weight: 700 ;">Chamadas</label>
             </div>
           </div>
@@ -66,7 +66,7 @@
                 <div *ngIf="notaAluno.length === 0">
                     <div class="modal-body text-justify d-flex justify-content-center">
                         <h5 class="modal-title text-center w-100">Nova Nota: </h5>
-                        <input class="modal-body form-control" type="text" name="nome" placeholder="Insira o valor da nota: "
+                        <input class="modal-body form-control" type="number" name="nome" placeholder="Insira o valor da nota: "
                         required>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                 <div *ngIf="notaAluno.length > 0">
                     <div class="modal-body text-justify d-flex justify-content-center">
                         <h6 class="modal-title text-center w-100">Nota Cadastrada Anteriormente: </h6>
-                        <input [value]="notaAluno[0].nota" class="modal-body form-control" type="text" name="nome" placeholder="Insira o valor da nota: "
+                        <input [value]="notaAluno[0].nota" class="modal-body form-control" type="number" name="nome" placeholder="Insira o valor da nota: "
                         required>
                     </div>
                 </div>

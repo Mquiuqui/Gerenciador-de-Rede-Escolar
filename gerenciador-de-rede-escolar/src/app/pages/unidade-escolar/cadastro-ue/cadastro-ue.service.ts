@@ -21,4 +21,8 @@ export class CadastroUeService {
   getUnidadeEscolar() {
     return this.http.get<IApiReturn<any>>(`http://localhost:3333/Unidades`)
   }
+
+  deleteUnidadeEscolar(data) {
+    return this.http.post<IApiReturn<any>>(`http://localhost:3333/Unidades/delete`, data)
+  }
 }

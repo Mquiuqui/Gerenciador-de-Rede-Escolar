@@ -34,7 +34,7 @@ export class UnidadeController {
         console.log(req.body)
         if(req.body.nomeEscola.length === 0) throw new BadRequestException('Nome da escola não informado')
         if(req.body.endereco.length === 0) throw new BadRequestException('Endereço não informado')
-        if(req.body.nroEndereco === '0') throw new BadRequestException('Número do Endereço não informado')
+        if(req.body.nroEndereco === '') throw new BadRequestException('Número do Endereço não informado')
         let existe = await this.defaultRepository.findOne({where:{nomeEscola:req.body.nomeEscola}})
         
         if(existe) throw new BadRequestException('Unidade já cadastrada')
@@ -46,6 +46,16 @@ export class UnidadeController {
         novaUnidade.nomeEscola = req.body.nomeEscola
         
         return this.defaultRepository.save(novaUnidade)
+
+    }
+
+    @Post('/Unidades/delete')
+    async deleteUnidade(req: Request) {
+        console.log(req.body)
+        let unidade = await this.defaultRepository.findOne({where:{id:Number(req.body.id)}})
+        if(unidade){
+            return await this.defaultRepository.remove(unidade)
+        }
 
     }
 

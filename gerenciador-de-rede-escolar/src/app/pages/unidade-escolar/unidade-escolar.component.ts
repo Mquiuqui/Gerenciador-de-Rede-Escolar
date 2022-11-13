@@ -37,4 +37,10 @@ export class UnidadeEscolarComponent implements OnInit {
 
   }
 
+  async remove(id){
+    let data = {id:id}
+    let response = (await lastValueFrom(this.service.deleteUnidadeEscolar(data))).listaResultados
+    this.load()
+  }
+
 }
