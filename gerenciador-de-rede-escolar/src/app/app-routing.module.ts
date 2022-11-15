@@ -29,6 +29,7 @@ import { CadastroUeComponent } from './pages/unidade-escolar/cadastro-ue/cadastr
 import { UnidadeEscolarComponent } from './pages/unidade-escolar/unidade-escolar.component';
 import { VisualizarBoletosComponent } from './pages/visualizar-boletos/visualizar-boletos.component';
 import { ChamadaComponent } from './pages/disciplinas/chamada/chamada.component';
+import { ListarChamadaComponent } from './pages/disciplinas/chamada/listar-chamada/listar-chamada.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -65,6 +66,7 @@ const routes: Routes = [
   {path:'cadastro_disciplinas', component: CadastroDisciplinasComponent, canActivate:[AuthGuard]},
   {path:'detalhe_disciplinas/:id', component: DetalhesDisciplinaComponent, canActivate:[AuthGuard]},
   {path:'chamada/:id', component: ChamadaComponent, canActivate:[AuthGuard]},
+  {path:'listar-chamadas', component: ListarChamadaComponent, canActivate:[AuthGuard]},
 
   {path:'listar_funcionario', component: FuncionarioComponent, canActivate:[AuthGuard]},
   {path:'cadastro_funcionario', component: CadastroFuncionarioComponent, canActivate:[AuthGuard]},

@@ -10,7 +10,7 @@ import { Chamada } from '../../entity/Chamada'
 
 export class ChamadaController {
 
-    private defaultRepository = AppDataSource.getRepository(Atividade)
+    private defaultRepository = AppDataSource.getRepository(Chamada)
     private defaultRepositoryNota = AppDataSource.getRepository(Nota)
 
     @Get('/Chamadas')
@@ -37,10 +37,11 @@ export class ChamadaController {
 
     }
 
-    @Get('/ChamadasAluno')
+    @Get('/ChamadasAluno/:id')
     async porDisciplinaAluno(req: Request) {
-
-        let a = await this.defaultRepository.find({where:{idDisciplina:Number(req.query.id)}})
+        console.log(req.query.id)
+        let a = await this.defaultRepository.find({where:{rgmAluno:Number(req.params.id)}})
+        console.log(a)
         return a
 
     }
@@ -55,18 +56,20 @@ export class ChamadaController {
 
     @Post('/Chamada')
     saveChamada(req: Request) {
+        console.log(req.body)
+        req.body.map(async (chamada:any) => {
+            let novachamada = new Chamada()
 
-        req.body.chamada.map(async (chamada:any) => {
-            let novaAtividade = new Chamada()
-
-            novaAtividade.idDisciplina = chamada.idDisciplina
-            novaAtividade.dia = chamada.dia
-            novaAtividade.rgmAluno = chamada.idAluno
-            novaAtividade.presenca = chamada.presenca
+            novachamada.idDisciplina = chamada.idDisciplina
+            novachamada.dia = new Date().toISOString().split('T')[0]
+            novachamada.rgmAluno = chamada.idAluno
+            novachamada.presenca = 0
             
-            return this.defaultRepository.save(novaAtividade)
+            let response = await this.defaultRepository.save(novachamada)
+            console.log(response)
         }
         )
+        return {message: "Chamada realizada com sucesso!"}
 
     }
 

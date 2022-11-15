@@ -21,7 +21,7 @@ export class ChamadaService {
   }
 
   sendChamada(data: any) {
-    return this.http.post<IApiReturn<any>>(`http://localhost:3333/Nota`, data)
+    return this.http.post<IApiReturn<any>>(`http://localhost:3333/Chamada`, data)
   }
 
 }

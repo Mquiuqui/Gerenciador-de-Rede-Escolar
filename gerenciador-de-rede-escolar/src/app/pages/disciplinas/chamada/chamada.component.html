@@ -10,7 +10,7 @@
           <div class="d-flex flex-row">
             <label style="font-size: xx-large;font-weight: 700 ;">Alunos da Disciplina</label>
             <div class="ml-auto  p-2">
-              <label (click)="salvarChamada()" class="adicionar m-2"
+              <label  (click)="salvarChamada()" class="adicionar m-2"
                 style="font-size: larger;font-weight: 700 ;">Salvar</label>
             </div>
           </div>
@@ -29,8 +29,7 @@
                 <th scope="row">{{aluno.id}}</th>
                 <td>{{aluno.nomeAluno}}</td>
                 <td class="editar">
-                    <mat-radio-button [(ngModel)]="aluno.presenca"></mat-radio-button>
-                    <input name="check+{{aluno.id}}" id="check+{{aluno.id}}" type="checkbox">
+                    <input value="{{aluno.id}}" type="checkbox" id="check-{{aluno.id}}" checked>
                 </td>
 
 

@@ -37,6 +37,9 @@ import { ChamadasComponent } from './pages/chamadas/chamadas.component';
 import { ModalModule } from './components/modal/modal.modules';
 import { ListarUnidadeEscolarComponent } from './pages/unidade-escolar/listar-unidade-escolar/listar-unidade-escolar.component';
 import { ChamadaComponent } from './pages/disciplinas/chamada/chamada.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ListarChamadaComponent } from './pages/disciplinas/chamada/listar-chamada/listar-chamada.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,7 @@ import { ChamadaComponent } from './pages/disciplinas/chamada/chamada.component'
     ChamadasComponent,
     ListarUnidadeEscolarComponent,
     ChamadaComponent,
+    ListarChamadaComponent,
     
   ],
   imports: [
@@ -78,7 +82,9 @@ import { ChamadaComponent } from './pages/disciplinas/chamada/chamada.component'
     NgbModule,
     HttpClientModule,
     FormsModule,
-    ModalModule
+    ModalModule,
+    MatRadioModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

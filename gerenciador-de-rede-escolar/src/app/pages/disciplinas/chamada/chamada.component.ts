@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCheckbox } from '@angular/material/checkbox';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { FlashMessageService } from 'src/app/components/flash-message/flash-message.service';
@@ -56,28 +57,33 @@ export class ChamadaComponent implements OnInit {
 
   }
 
-  async salvarChamada(){
+  async salvarChamada() {
 
-    this.listaAlunos.map(aluno => {
-      let check = document.getElementById(`check+${aluno.id}`)
-      console.log(check)
+    let dataList = []
+    this.listaAlunos.map(async aluno => {
+      let check = document.querySelector(`input[id = check-${aluno.id}]:checked`) as HTMLInputElement;
+      if (!check) {
+        //console.log(check.value)
+        let data = {
+          idDisciplina: this.idDisciplina,
+          dia: new Date(),
+          idAluno: aluno.id
+        }
+        dataList.push(data)
+      }
     })
+    try {
+      const result = (await lastValueFrom(this.service.sendChamada(dataList))).listaResultados
+      this.flashMessageService.show(result, 'success')
+    } catch (error) {
+      this.flashMessageService.show(error.message, 'error')
+    }
 
-    // let data = {
-    //   idAluno: this.idAlunoSelecionado,
-    //   idAtividade: this.atividadeSelecionada.id,
-    //   idAcesso: this.AcessoId
-    // }
-    // try {
-    //   const result = (await lastValueFrom(this.service.sendChamada(data))).listaResultados
-    //   this.flashMessageService.show(result, 'success')
-    // } catch (error) {
-    //   this.flashMessageService.show(error.message, 'error')
-    // }
+
   }
 
 
 
-  
+
 
 }
