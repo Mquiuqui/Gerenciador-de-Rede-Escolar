@@ -6,11 +6,13 @@ import { Delete, Get, Post } from '../../utils/decorators/Methods'
 import { Atividade } from '../../entity/Atividade'
 import { Nota } from '../../entity/Nota'
 import { Chamada } from '../../entity/Chamada'
+import { Disciplina } from '../../entity/Disciplina'
 
 
 export class ChamadaController {
 
     private defaultRepository = AppDataSource.getRepository(Chamada)
+    private defaultRepositoryDisciplina = AppDataSource.getRepository(Disciplina)
     private defaultRepositoryNota = AppDataSource.getRepository(Nota)
 
     @Get('/Chamadas')
@@ -39,10 +41,34 @@ export class ChamadaController {
 
     @Get('/ChamadasAluno/:id')
     async porDisciplinaAluno(req: Request) {
-        console.log(req.query.id)
+
+        let disciplina = await this.defaultRepositoryDisciplina.find()
         let a = await this.defaultRepository.find({where:{rgmAluno:Number(req.params.id)}})
-        console.log(a)
-        return a
+        
+        let retorno:any[]=[]
+
+        disciplina.map(async (disciplina:any) => {
+            let lista:any[]=[]
+            a.map(async (chamada:any) => {
+                if(chamada.idDisciplina == disciplina.id){
+                    let obj = {
+                        id: disciplina.id,
+                        nome: disciplina.nomeDisciplina,
+                        presenca: chamada.presenca
+                    }
+                    lista.push(obj)
+                }
+            })
+            retorno.push(lista)
+        })
+
+        // let b = await this.defaultRepository.createQueryBuilder("chamada")
+        //     .where(`chamada.rgmAluno = :id`, {id: Number(req.params.id)})
+        //     .getManyAndCount()
+        
+        console.log(retorno)
+    
+        return retorno
 
     }
 

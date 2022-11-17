@@ -6,11 +6,12 @@ import { Tables } from './entity'
 //dotenv.config()
 
 export const AppDataSource = new DataSource({
+    
     type: 'mysql',
     port: 3306,
     host: "127.0.0.1",
     username: "root",
-    password: "123123",
+    password: "",
     database: "prjEscola",
     synchronize: false,
     entities: [...Tables],

@@ -15,7 +15,7 @@ export class ListarChamadaComponent implements OnInit {
   AcessoId: number
   user: AccountService
   rota: Router
-  listaNotas: any[] = []
+  listaChamada: any[] = []
   constructor(
     private router: Router,
     private auth: AccountService,
@@ -34,7 +34,10 @@ export class ListarChamadaComponent implements OnInit {
 
     let response = (await lastValueFrom(this.service.getPorAlunos(this.user.userValue.id))).listaResultados
     console.log(response)
-    this.listaNotas = response
-
+    response.map(itens =>{
+      if(itens.length>0){
+        this.listaChamada.push(itens)
+      }
+    })
   }
 }

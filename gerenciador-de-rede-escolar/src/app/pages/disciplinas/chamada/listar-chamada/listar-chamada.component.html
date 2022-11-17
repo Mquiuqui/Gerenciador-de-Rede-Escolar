@@ -1,40 +1,34 @@
 <div class="form-body">
-    <div class="row">
-      <div class="form-holder">
-        <div class="form-content">
-          <div class="form-items">
-            <div class="cancelar form-button mb-4 d-flex ">
-              <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Voltar</button>
-            </div>
-            <div class="d-flex flex-row">
-              <label style="font-size: xx-large;font-weight: 700 ;">Suas Notas</label>
-  
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th style="font-weight: 700 ;" scope="col">Id</th>
-                  <th style="font-weight: 700 ;" scope="col">Dia</th>
-                  
-                  <th style="font-weight: 700 ;" scope="col">Nota</th>
-  
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let nota of listaNotas">
-  
-                  <th scope="row">{{nota.id}}</th>
-                  <td>{{nota.dia}}</td>
-                  
-                  <td>{{nota}}</td>
-                  <!-- <td (click)="this.rota.navigate(['/detalhe_disciplinas/'+disciplina.id])" class="editar">Expandir</td>
-     -->
-                </tr>
-              </tbody>
-            </table>
+  <div class="row">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <div class="cancelar form-button mb-4 d-flex ">
+            <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Voltar</button>
           </div>
+          <div class="d-flex flex-row">
+            <label style="font-size: xx-large;font-weight: 700 ;">Suas NoFtas</label>
+
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="font-weight: 700 ;" scope="col">Disciplina</th>
+                <th style="font-weight: 700 ;" scope="col">Faltas</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let chamada of listaChamada">
+
+                <td>{{chamada[0].nome}}</td>
+                <td>{{chamada.length}}</td>
+
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
