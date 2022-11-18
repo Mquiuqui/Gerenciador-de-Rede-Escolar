@@ -1,0 +1,81 @@
+
+  body {
+    background-color: #DBEDF4;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% auto;
+
+
+    }
+
+  .brand-wrapper {
+    margin-bottom: 19px;
+    display: flex;
+    justify-content: center;
+  }
+    .brand-wrapper .logo {
+      height: 37px;
+  }
+
+
+  .login-card {
+    border: 0;
+    border-radius: 27.5px;
+    box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+    overflow: hidden;
+  }
+  .login-card-img {
+      border-radius: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .login-card .card-body {
+      padding: 35px 10px 60px;
+
+    }
+    .container .card-body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card-body form{
+      width: 100%;
+    }
+    .login-card-description {
+      text-align: center;
+      font-size: 25px;
+      color: #000;
+      font-weight: 600;
+      margin-bottom: 23px;
+    }
+
+    .login-card-phone {
+      text-align: center;
+      font-size: 20px;
+      color: #000;
+      font-weight: normal;
+      margin-bottom: 23px;
+    }
+
+
+      .texto-rodape{
+        color: #000000;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+      }
+
+      footer, h3{
+        padding: 50px !important;
+        background-color: #03658C;
+        color: #ffffff;
+      }
+
+      footer a {
+        color: #ffffff;
+        font-weight: 700;
+      }
