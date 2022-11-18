@@ -5,7 +5,7 @@ body{
     background-attachment: fixed;
     background-size: 100% auto;
   }
-  
+
   .btn-carrossel{
     color: #ffff;
     background-color: #03658C;
@@ -14,7 +14,7 @@ body{
     margin: 5px;
     border: none;
   }
-  
+
   .btn-carrossel:hover{
     background-color: #ffffff;
     box-shadow: #000 0px 1px 10px;
@@ -26,7 +26,7 @@ body{
     background-color: #03658C;
     border: none;
   }
-  
+
   .carousel{
     background-color: hsla(0, 0%, 100%, 0);
   }
@@ -35,7 +35,7 @@ body{
   }
   #myCarousel img{
     width: 100vh !important;
-  
+
   }
   .container .categoria-lista{
     text-align: center !important;
@@ -50,12 +50,12 @@ body{
   .card-body .card-contents{
     background-color: #03658C;
   }
-  
+
   .card-body .img-customer{
     width: 90px !important;
     height: 90px !important;
   }
-  
+
   .card-text{
     text-align: center;
   }
@@ -68,12 +68,27 @@ body{
   .relatos{
     margin-bottom: 150px !important;
   }
-  
-  
+
+
   p{
     text-align: center !important;
     text-align: justify !important;
   }
-  
-  
-  
+
+  .texto-rodape{
+    color: #000000;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+  }
+
+  footer, h3{
+    padding: 50px !important;
+    background-color: #03658C;
+    color: #ffffff;
+  }
+
+  footer a {
+    color: #ffffff;
+    font-weight: 700;
+  }
