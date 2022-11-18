@@ -1,3 +1,4 @@
+import { ContatoComponent } from './contato/contato.component';
 import { ListarUnidadeEscolarComponent } from './pages/unidade-escolar/listar-unidade-escolar/listar-unidade-escolar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:'', component: LandingPageComponent},
 
   {path:'home', component: HomeComponent, canActivate:[AuthGuard]},
+  {path:'contato', component: ContatoComponent, canActivate:[AuthGuard]},
   {path:'perfil_editar', component: PerfilComponent, canActivate:[AuthGuard]},
 
   {path:'matricula', component: MatriculaComponent},

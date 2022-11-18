@@ -40,6 +40,7 @@ import { ChamadaComponent } from './pages/disciplinas/chamada/chamada.component'
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ListarChamadaComponent } from './pages/disciplinas/chamada/listar-chamada/listar-chamada.component';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ListarChamadaComponent } from './pages/disciplinas/chamada/listar-chama
     ListarUnidadeEscolarComponent,
     ChamadaComponent,
     ListarChamadaComponent,
+    ContatoComponent,
     
   ],
   imports: [
