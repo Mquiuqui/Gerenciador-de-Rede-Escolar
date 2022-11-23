@@ -44,7 +44,8 @@ export class CadastroUeComponent implements OnInit {
             let response = (await lastValueFrom(this.service.sendUE(data)))
 
             if (!response.flagErro) {
-                this.rota.navigate(['/home'])
+                this.flash.show('Unidade Escolar cadastrada com sucesso', 'success')
+                this.rota.navigate(['/unidade_escolar'])
             }
         } catch (error) {
             console.log(error)

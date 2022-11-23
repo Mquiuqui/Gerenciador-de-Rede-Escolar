@@ -41,7 +41,13 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ListarChamadaComponent } from './pages/disciplinas/chamada/listar-chamada/listar-chamada.component';
 import { ContatoComponent } from './contato/contato.component';
+import { IConfig,NgxMaskModule } from 'ngx-mask';
+import { EditarUeComponent } from './pages/unidade-escolar/editar-ue/editar-ue.component';
+import { EditarCursosComponent } from './pages/cursos/editar-cursos/editar-cursos.component';
 
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +82,8 @@ import { ContatoComponent } from './contato/contato.component';
     ChamadaComponent,
     ListarChamadaComponent,
     ContatoComponent,
+    EditarUeComponent,
+    EditarCursosComponent,
     
   ],
   imports: [
@@ -86,7 +94,8 @@ import { ContatoComponent } from './contato/contato.component';
     FormsModule,
     ModalModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgxMaskModule.forRoot(maskConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

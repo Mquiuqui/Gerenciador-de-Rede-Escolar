@@ -29,7 +29,7 @@
                 <th scope="row">{{unidade.id}}</th>
                 <td>{{unidade.nomeEscola}}</td>
                 <td>{{unidade.endereco}}</td>
-                <td class="editar">Visualizar</td>
+                <td (click)="this.rota.navigate(['/editar-ue/'+unidade.id])" class="editar">Visualizar</td>
                 <td (click)="this.remove(unidade.id)" class="editar">Remover</td>
 
               </tr>

@@ -14,10 +14,7 @@ html, body {
     overflow: hidden;
 }
 
-.required:after {
-    content:" *";
-    color: red;
-  }
+
 .form-holder {
       display: flex;
       flex-direction: column;
@@ -70,7 +67,7 @@ html, body {
 
 .form-content p {
     color: black;
-
+    
     text-align: left;
     font-size: 17px;
     font-weight: 300;
@@ -83,7 +80,7 @@ html, body {
     color: black;
 }
 
-.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content input[type=number], .form-content select {
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
     width: 100%;
     padding: 9px 20px;
     text-align: left;
