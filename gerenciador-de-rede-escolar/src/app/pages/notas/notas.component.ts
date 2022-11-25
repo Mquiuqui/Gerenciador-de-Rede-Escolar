@@ -25,7 +25,7 @@ export class NotasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.AcessoId = this.user.userValue.idAcesso ? this.user.userValue.idAcesso : this.user.userValue.codigoDepartamento2.idAcesso.id
+    this.AcessoId = this.user.userValue.idAcesso ? this.user.userValue.idAcesso : this.user.userValue.codigoDepartamento2.idAcesso
     this.load()
   }
 

@@ -21,4 +21,8 @@ export class CadastrosService {
     return this.http.get<IApiReturn<any>>(`http://localhost:3333/Unidades`)
   }
 
+  getCurso(id) {
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Cursos/${id}`)
+  }
+
 }

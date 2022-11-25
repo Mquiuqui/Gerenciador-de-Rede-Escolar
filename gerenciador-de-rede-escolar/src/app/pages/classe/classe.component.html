@@ -31,7 +31,8 @@
                   <td>{{classe.descricaoClasse}}</td>
                   <td>{{classe.codigoCurso2.nomeCurso}}</td>
                   <td>{{classe.quantidadeAlunos+classe.quantidadeAlunosEspeciais}}</td>
-                  <td class="editar">Visualizar</td>
+                  <td class="editar" (click)="this.rota.navigate(['editar_classe/'+classe.id])" >Visualizar</td>
+                  <td class="editar" (click)="deleteClasse(classe.id)" >Remover</td>
   
                 </tr>
   

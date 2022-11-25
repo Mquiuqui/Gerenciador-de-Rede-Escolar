@@ -20,6 +20,8 @@
                 <th style="font-weight: 700 ;" scope="col">Titulo</th>
                 <th style="font-weight: 700 ;" scope="col">Periodo</th>
                 <th style="font-weight: 700 ;" scope="col">UE</th>
+                <th style="font-weight: 700 ;" scope="col"></th>
+                <th style="font-weight: 700 ;" scope="col"></th>
                 <th></th>
 
               </tr>
@@ -31,8 +33,9 @@
                 <td>{{curso.nomeCurso}}</td>
                 <td>{{curso.idTurno2.nomeTurno}}</td>
                 <td>{{curso.idEscola2.nomeEscola}}</td>
-                <!-- <td class="editar" (click)="this.rota.navigate(['visualizar_matricula/'+matricula.id])">Visualizar</td>
-                <td class="editar" (click)="this.aprovar(matricula.id)">aprovar</td> -->
+                <td class="editar" (click)="this.rota.navigate(['editar_curso/'+curso.id])">Visualizar</td>
+                <td class="editar" (click)="this.deleteCurso(curso.id)">Remover</td>
+                <!-- <td class="editar" (click)="this.aprovar(matricula.id)">aprovar</td> -->
 
               </tr>
 

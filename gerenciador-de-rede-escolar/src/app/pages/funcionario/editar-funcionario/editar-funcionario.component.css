@@ -80,7 +80,7 @@ html, body {
     color: black;
 }
 
-.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content input[type=number] .form-content select {
     width: 100%;
     padding: 9px 20px;
     text-align: left;
@@ -155,3 +155,12 @@ html, body {
 .cancelar button{
   background-color: #ff606e;
 }
+
+.btnModal{
+    background-color: #2acc80;
+    color: #fff;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+    border-radius: 6px;
+   }

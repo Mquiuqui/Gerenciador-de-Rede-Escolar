@@ -5,17 +5,17 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from "typeorm";
 import { Curso } from "./Curso";
-import { Estoque } from "./Estoque";
 import { Professor } from "./Professor";
 import { Turno } from "./Turno";
 import { Administracao } from "./Administracao";
 
 @Index("Foreignkey_UE_ADM_idx", ["administrador"], {})
-@Entity("unidadade_escolar", { schema: "prjescola" })
-export class UnidadadeEscolar {
-  @Column("int", { primary: true, name: "id" })
+@Entity("unidade_escolar", { schema: "prjescola" })
+export class UnidadeEscolar {
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("varchar", { name: "Nome_Escola", length: 250 })
@@ -36,9 +36,6 @@ export class UnidadadeEscolar {
   @OneToMany(() => Curso, (curso) => curso.idEscola2)
   cursos: Curso[];
 
-  @OneToMany(() => Estoque, (estoque) => estoque.idEscola2)
-  estoques: Estoque[];
-
   @OneToMany(() => Professor, (professor) => professor.idEscola2)
   professors: Professor[];
 
@@ -47,7 +44,7 @@ export class UnidadadeEscolar {
 
   @ManyToOne(
     () => Administracao,
-    (administracao) => administracao.unidadadeEscolars,
+    (administracao) => administracao.unidadeEscolars,
     { onDelete: "NO ACTION", onUpdate: "NO ACTION" }
   )
   @JoinColumn([{ name: "Administrador", referencedColumnName: "id" }])

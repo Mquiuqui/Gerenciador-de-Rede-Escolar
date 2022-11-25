@@ -44,6 +44,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { IConfig,NgxMaskModule } from 'ngx-mask';
 import { EditarUeComponent } from './pages/unidade-escolar/editar-ue/editar-ue.component';
 import { EditarCursosComponent } from './pages/cursos/editar-cursos/editar-cursos.component';
+import { EditarClasseComponent } from './pages/classe/editar-classe/editar-classe.component';
+import { EditarFuncionarioComponent } from './pages/funcionario/editar-funcionario/editar-funcionario.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -84,6 +86,8 @@ const maskConfig: Partial<IConfig> = {
     ContatoComponent,
     EditarUeComponent,
     EditarCursosComponent,
+    EditarClasseComponent,
+    EditarFuncionarioComponent,
     
   ],
   imports: [

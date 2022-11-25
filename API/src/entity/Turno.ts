@@ -5,14 +5,15 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from "typeorm";
 import { Curso } from "./Curso";
-import { UnidadadeEscolar } from "./UnidadadeEscolar";
+import { UnidadeEscolar } from "./UnidadeEscolar";
 
 @Index("FOREIGNKEY_TURNO_UE_idx", ["idEscola"], {})
 @Entity("turno", { schema: "prjescola" })
 export class Turno {
-  @Column("int", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("int", { name: "ID_escola", nullable: true })
@@ -24,11 +25,10 @@ export class Turno {
   @OneToMany(() => Curso, (curso) => curso.idTurno2)
   cursos: Curso[];
 
-  @ManyToOne(
-    () => UnidadadeEscolar,
-    (unidadadeEscolar) => unidadadeEscolar.turnos,
-    { onDelete: "NO ACTION", onUpdate: "NO ACTION" }
-  )
+  @ManyToOne(() => UnidadeEscolar, (unidadeEscolar) => unidadeEscolar.turnos, {
+    onDelete: "NO ACTION",
+    onUpdate: "NO ACTION",
+  })
   @JoinColumn([{ name: "ID_escola", referencedColumnName: "id" }])
-  idEscola2: UnidadadeEscolar;
+  idEscola2: UnidadeEscolar;
 }

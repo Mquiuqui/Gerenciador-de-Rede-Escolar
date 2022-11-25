@@ -4,7 +4,7 @@ import { Curso } from "./Curso";
 import { Disciplina } from "./Disciplina";
 
 @Index("FOREIGNKEY_PARAMETROS_CURSO_idx", ["idCurso"], {})
-@Index("FOREIGNKEY_PARAMETROS_CLASSE_idx", ["idClase"], {})
+@Index("FOREIGNKEY_PARAMETROS_CLASSE_idx", ["idClasse"], {})
 @Index("FOREIGNKEY_PARAMETROS_DISCIPLINA_idx", ["idDisciplina"], {})
 @Entity("parametros", { schema: "prjescola" })
 export class Parametros {
@@ -23,15 +23,15 @@ export class Parametros {
   @Column("int", { name: "ID_Curso", nullable: true })
   idCurso: number | null;
 
-  @Column("int", { name: "ID_Clase", nullable: true })
-  idClase: number | null;
+  @Column("int", { name: "ID_Classe", nullable: true })
+  idClasse: number | null;
 
   @ManyToOne(() => Classe, (classe) => classe.parametros, {
     onDelete: "NO ACTION",
     onUpdate: "NO ACTION",
   })
-  @JoinColumn([{ name: "ID_Clase", referencedColumnName: "id" }])
-  idClase2: Classe;
+  @JoinColumn([{ name: "ID_Classe", referencedColumnName: "id" }])
+  idClasse2: Classe;
 
   @ManyToOne(() => Curso, (curso) => curso.parametros, {
     onDelete: "NO ACTION",

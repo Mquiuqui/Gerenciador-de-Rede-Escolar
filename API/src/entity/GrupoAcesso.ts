@@ -19,6 +19,6 @@ export class GrupoAcesso {
   @OneToMany(() => Aluno, (aluno) => aluno.idAcesso2)
   alunos: Aluno[];
 
-  @OneToMany(() => Departamento, (departamento) => departamento.idAcesso)
+  @OneToMany(() => Departamento, (departamento) => departamento.idAcesso2)
   departamentos: Departamento[];
 }

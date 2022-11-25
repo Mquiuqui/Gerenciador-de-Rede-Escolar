@@ -32,6 +32,9 @@ import { VisualizarBoletosComponent } from './pages/visualizar-boletos/visualiza
 import { ChamadaComponent } from './pages/disciplinas/chamada/chamada.component';
 import { ListarChamadaComponent } from './pages/disciplinas/chamada/listar-chamada/listar-chamada.component';
 import { EditarUeComponent } from './pages/unidade-escolar/editar-ue/editar-ue.component';
+import { EditarCursosComponent } from './pages/cursos/editar-cursos/editar-cursos.component';
+import { EditarClasseComponent } from './pages/classe/editar-classe/editar-classe.component';
+import { EditarFuncionarioComponent } from './pages/funcionario/editar-funcionario/editar-funcionario.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
@@ -55,9 +58,11 @@ const routes: Routes = [
 
   {path:'cursos', component: CursosComponent, canActivate:[AuthGuard]},
   {path:'cadastro_curso', component: CadastrosComponent, canActivate:[AuthGuard]},
+  {path:'editar_curso/:id', component: EditarCursosComponent, canActivate:[AuthGuard]},
 
   {path:'classe', component: ClasseComponent, canActivate:[AuthGuard]},
   {path:'cadastro_classe', component: CadastroClasseComponent, canActivate:[AuthGuard]},
+  {path:'editar_classe/:id', component: EditarClasseComponent, canActivate:[AuthGuard]},
 
   {path:'vizualizar_boletos', component: VisualizarBoletosComponent, canActivate:[AuthGuard]},
 
@@ -74,6 +79,7 @@ const routes: Routes = [
 
   {path:'listar_funcionario', component: FuncionarioComponent, canActivate:[AuthGuard]},
   {path:'cadastro_funcionario', component: CadastroFuncionarioComponent, canActivate:[AuthGuard]},
+  {path:'editar_funcionario/:id', component: EditarFuncionarioComponent, canActivate:[AuthGuard]},
 
 ];
 

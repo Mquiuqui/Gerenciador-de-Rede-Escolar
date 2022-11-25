@@ -1,4 +1,11 @@
-import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
+import {
+  Column,
+  Entity,
+  Index,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { Aluno } from "./Aluno";
 import { Disciplina } from "./Disciplina";
 
@@ -6,7 +13,7 @@ import { Disciplina } from "./Disciplina";
 @Index("FOREIGNKEY_CHAMADA_ALUNO_idx", ["rgmAluno"], {})
 @Entity("chamada", { schema: "prjescola" })
 export class Chamada {
-  @Column("int", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("tinyint", { name: "Presenca", nullable: true })

@@ -37,6 +37,17 @@ export class CursoController {
 
     }
 
+    @Get('/Cursos/delete/:id')
+    async delete(req:Request) {
+        let a = await this.defaultRepository.findOne({where:{id:Number(req.params.id)}})
+        if(!a) throw new Error('Curso não encontrado')
+        
+        let response = await this.defaultRepository.remove(a)
+        
+        return response
+
+    }
+
     
     @Post('/Cursos')
     async saveCursos(req: Request) {

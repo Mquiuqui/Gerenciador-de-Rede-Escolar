@@ -10,19 +10,26 @@ export class FuncionarioService {
   constructor(private http: HttpClient) { }
 
   getFuncionario() {
-      return this.http.get<IApiReturn<any>>(`http://localhost:3333/Funcionarios`)
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Funcionarios`)
+  }
+  getFunc(id) {
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Funcionarios/${id}`)
   }
 
   getCursos() {
     return this.http.get<IApiReturn<any>>(`http://localhost:3333/Cursos`)
-}
+  }
 
   getDepartamento() {
-      return this.http.get<IApiReturn<any>>(`http://localhost:3333/Departamentos`)
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Departamentos`)
   }
 
   sendFuncionario(data: any) {
     return this.http.post<IApiReturn<any>>(`http://localhost:3333/Funcionarios`, data)
+  }
+
+  deleteFuncionario(id) {
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Funcionarios/delete/${id}`)
   }
 
 }

@@ -29,7 +29,8 @@
                 <th scope="row">{{funcionario.id}}</th>
                 <td>{{funcionario.nomeFuncionario}}</td>
                 <td>{{funcionario.cargo}}</td>
-                <td class="editar">Visualizar</td>
+                <td class="editar" (click)="this.rota.navigate(['/editar_funcionario/'+funcionario.id])">Visualizar</td>
+                <td class="editar" (click)="deleteFuncionario(funcionario.id)">Remover</td>
 
               </tr>
 

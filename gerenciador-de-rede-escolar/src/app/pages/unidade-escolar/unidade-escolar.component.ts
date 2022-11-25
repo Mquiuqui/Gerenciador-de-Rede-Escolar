@@ -39,7 +39,11 @@ export class UnidadeEscolarComponent implements OnInit {
 
   async remove(id){
     let data = {id:id}
-    let response = (await lastValueFrom(this.service.deleteUnidadeEscolar(data))).listaResultados
+    let response = (await lastValueFrom(this.service.deleteUnidadeEscolar(data)))
+    if(response.flagErro){
+      this.flash.show("A Unidade Escolar possui Cursos Ativas", 'error')
+      return
+    }
     this.load()
   }
 

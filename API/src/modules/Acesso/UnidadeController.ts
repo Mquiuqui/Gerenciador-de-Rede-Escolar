@@ -6,12 +6,13 @@ import { Departamento } from '../../entity/Departamento'
 import { GrupoAcesso } from '../../entity/GrupoAcesso'
 import { Aluno } from '../../entity/Aluno'
 import { Funcionario } from '../../entity/Funcionario'
-import { UnidadadeEscolar } from '../../entity/UnidadadeEscolar'
+import { UnidadeEscolar } from '../../entity/UnidadeEscolar'
+
 
 
 export class UnidadeController {
 
-    private defaultRepository = AppDataSource.getRepository(UnidadadeEscolar)
+    private defaultRepository = AppDataSource.getRepository(UnidadeEscolar)
 
     @Get('/Unidades')
     async all() {
@@ -39,7 +40,7 @@ export class UnidadeController {
 
         if (existe) throw new BadRequestException('Unidade já cadastrada')
 
-        let novaUnidade = new UnidadadeEscolar()
+        let novaUnidade = new UnidadeEscolar()
 
         novaUnidade.administrador = 1
         novaUnidade.endereco = req.body.endereco + ',' + req.body.nroEndereco
@@ -74,3 +75,4 @@ export class UnidadeController {
     }
 
 }
+    

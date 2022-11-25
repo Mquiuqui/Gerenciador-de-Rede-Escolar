@@ -5,11 +5,12 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from "typeorm";
 import { Aluno } from "./Aluno";
 import { Classe } from "./Classe";
 import { Turno } from "./Turno";
-import { UnidadadeEscolar } from "./UnidadadeEscolar";
+import { UnidadeEscolar } from "./UnidadeEscolar";
 import { Disciplina } from "./Disciplina";
 import { Parametros } from "./Parametros";
 import { Professor } from "./Professor";
@@ -18,7 +19,7 @@ import { Professor } from "./Professor";
 @Index("FOREIGNKEY_CURSO_TURNO_idx1", ["idEscola"], {})
 @Entity("curso", { schema: "prjescola" })
 export class Curso {
-  @Column("int", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("varchar", { name: "Nome_Curso", nullable: true, length: 50 })
@@ -46,13 +47,12 @@ export class Curso {
   @JoinColumn([{ name: "ID_Turno", referencedColumnName: "id" }])
   idTurno2: Turno;
 
-  @ManyToOne(
-    () => UnidadadeEscolar,
-    (unidadadeEscolar) => unidadadeEscolar.cursos,
-    { onDelete: "NO ACTION", onUpdate: "NO ACTION" }
-  )
+  @ManyToOne(() => UnidadeEscolar, (unidadeEscolar) => unidadeEscolar.cursos, {
+    onDelete: "NO ACTION",
+    onUpdate: "NO ACTION",
+  })
   @JoinColumn([{ name: "ID_Escola", referencedColumnName: "id" }])
-  idEscola2: UnidadadeEscolar;
+  idEscola2: UnidadeEscolar;
 
   @OneToMany(() => Disciplina, (disciplina) => disciplina.codigoCurso2)
   disciplinas: Disciplina[];

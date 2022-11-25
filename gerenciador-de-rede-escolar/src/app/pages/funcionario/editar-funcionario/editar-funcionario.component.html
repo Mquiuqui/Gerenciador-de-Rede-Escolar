@@ -1,0 +1,53 @@
+<div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <h3>Cadastro de Funcionário</h3>
+            <form (submit)="this.submit($event)" class="requires-validation" novalidate>
+  
+              <div class="col-md-12">
+  
+                <input class="form-control" type="text" name="nome" placeholder="Nome : " required [value]="this.funcionario.nomeFuncionario">
+                <input class="form-control" type="text" name="nome" placeholder="Email : " required [value]="this.funcionario.email">
+                <input class="form-control" type="text" name="nome" placeholder="Senha : " required [value]="this.funcionario.senha">
+                <input class="form-control" type="text" name="nome" placeholder="Descrição Cargo : " required [value]="this.funcionario.cargo">
+                
+                <!-- <div class="valid-feedback">Username field is valid!</div>
+                  <div class="invalid-feedback">Username field cannot be blank!</div> -->
+              </div>
+              
+              <div class="col-md-12  mt-3">
+                  <input class="form-control" type="number" name="sal" placeholder="Salário : " required [value]="this.funcionario.salario">
+              </div>
+  
+              <div *ngIf="!flagProfessor" class="col-md-12 mt-4">
+                <label>Departamento </label>
+                <select class="form-select" required>
+                  <option *ngFor=" let depart of listaDepartamentos" value={{depart.id}} [selected]="depart.id === departamentoSelecionado">{{depart.nomeDepartamento}}
+                  </option>
+                </select>
+              </div>
+  
+              <div *ngIf="flagProfessor" class="col-md-12 mt-4">
+                <label>Curso </label>
+                <select class="form-select" required>
+                  <option *ngFor=" let curso of listaCursos" value={{curso.id}} [selected]="curso.id === cursoSelecionado">{{curso.nomeCurso}}
+                  </option>
+                </select>
+              </div>
+  
+              <div class="confirmar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>
+              </div>
+  
+              <div class="cancelar form-button mt-3 d-flex justify-content-center">
+                <button id="submit" (click)="this.rota.navigate(['/home'])" class="btn btn-primary">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -12,5 +12,9 @@ export class ClasseService {
   getClasses() {
       return this.http.get<IApiReturn<any>>(`http://localhost:3333/Classes`)
   }
+  deleteClasse(id) {
+    return this.http.get<IApiReturn<any>>(`http://localhost:3333/Classes/delete/${id}`)
+}
+
 
 }

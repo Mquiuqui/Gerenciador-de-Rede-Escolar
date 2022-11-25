@@ -30,7 +30,7 @@ export class UserController {
     @Post('/funcionario/login')
     async loginFuncionario(req: Request) {
         console.log(req.body)
-        let a = await this.defaultRepositoryFuncionario.findOne({ where: { email: req.body.login, senha: req.body.senha }, relations: { codigoDepartamento2: { idAcesso: true }, professors: true } })
+        let a = await this.defaultRepositoryFuncionario.findOne({ where: { email: req.body.login, senha: req.body.senha }, relations: { codigoDepartamento2: true, professors: true } })
         console.log(a)
         if (!a) throw new BadRequestException("login não encontrado")
         return a
@@ -50,6 +50,7 @@ export class UserController {
         let novoAluno = new Aluno()
         if (req.body.nomeAluno.length === 0) throw new Error("Nome não pode ser vazio")
         novoAluno.nomeAluno = req.body.nomeAluno
+        novoAluno.dataDeNascimento = req.body.dtNasc
         if (req.body.cpfAluno.length === 0) throw new Error("Email não pode ser vazio")
         novoAluno.emailAluno = req.body.emailAluno
         if (req.body.emailAluno.length === 0) throw new Error("Telefone não pode ser vazio")

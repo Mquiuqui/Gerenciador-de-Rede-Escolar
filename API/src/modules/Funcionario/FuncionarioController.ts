@@ -46,7 +46,7 @@ export class FuncionarioController {
     @Get('/Funcionarios/:id')
     async one(req: Request) {
 
-        let response = await this.defaultRepository.findOne({where:{id:Number(req.params.id)},relations: ['codigoCurso2', 'codigoCurso2.idTurno2', 'codigoClasse2']})
+        let response = await this.defaultRepository.findOne({where:{id:Number(req.params.id)},relations: ['professors','professors.codigoCurso2']})
         
         if(!response) throw new BadRequestException("Funcionário não encontrada")
         
@@ -69,37 +69,63 @@ export class FuncionarioController {
         
         let funcionarioNovo =  await this.defaultRepository.save(novoFuncionario)
 
-        let funcquery = await this.defaultRepository.find({order:{id:'DESC'}})
+        if(req.body.flagProfessor) {
+            let funcquery = await this.defaultRepository.find({order:{id:'DESC'}})
 
-        console.log("><<<<<",funcquery[0])
+            let novoProfessor = new Professor()
+    
+            novoProfessor.codigoCurso = Number(req.body.codigoCurso)
+            novoProfessor.nomeProfessor = req.body.nomeFuncionario
+            novoProfessor.idFuncionario = funcquery[0].id
+    
+            console.log(novoProfessor)
+    
+            let professorSalvo =  await this.defaultRepositoryProfessor.save(novoProfessor)
+            
+            console.log(">>>>>",professorSalvo)
+    
+            return professorSalvo
+        }
 
-        let novoProfessor = new Professor()
+        return funcionarioNovo
 
-        novoProfessor.codigoCurso = Number(req.body.codigoCurso)
-        novoProfessor.nomeProfessor = req.body.nomeFuncionario
-        novoProfessor.idFuncionario = funcquery[0].id
-
-        console.log(novoProfessor)
-
-        let professorSalvo =  await this.defaultRepositoryProfessor.save(novoProfessor)
-        
-        console.log(">>>>>",professorSalvo)
-
-        return professorSalvo
 
     }
 
-    // @Post('/aprovarMatricula')
-    // async aprovarMatricula(req: Request) {
-    //     let matricula = await this.defaultRepositoryMatricula.findOne({where:{id:Number(req.body.id)}})
-    //     if(!matricula) throw new BadRequestException("Matricula não encontrada")
-    //     matricula.flagMatriculaAceita = 1
+    @Get('/Funcionarios/delete/:id')
+    async delete(req: Request) {
+        console.log(Number(req.params.id))
+        let response = await this.defaultRepository.findOne({where:{id:Number(req.params.id)},relations: ['professors']})
+        
+        if(!response) throw new BadRequestException("Funcionário não encontrada")
+        
+        if(response.professors.length > 0){
+            let professor = await this.defaultRepositoryProfessor.delete({idFuncionario:response.id})
+            if(!professor) throw new BadRequestException("Professor com atividades ativas")
+        }
 
-    //     let matriculaaprovada = await this.defaultRepositoryMatricula.save(matricula)
-    
-    //     return matricula
+        this.defaultRepository.delete({id:response.id})
+
+        return response
+
+    }
+
+    @Get('/Funcionarios/update/:id')
+    async update(req: Request) {
+        console.log(Number(req.params.id))
+        let response = await this.defaultRepository.findOne({where:{id:Number(req.params.id)},relations: ['professors']})
         
+        if(!response) throw new BadRequestException("Funcionário não encontrada")
         
-    // }
+        if(response.professors.length > 0){
+            let professor = await this.defaultRepositoryProfessor.delete({idFuncionario:response.id})
+            if(!professor) throw new BadRequestException("Professor com atividades ativas")
+        }
+
+        this.defaultRepository.delete({id:response.id})
+
+        return response
+
+    }
 
 }

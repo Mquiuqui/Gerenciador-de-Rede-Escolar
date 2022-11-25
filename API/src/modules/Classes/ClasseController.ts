@@ -23,6 +23,7 @@ export class ClasseController {
     @Get('/Classe/:id')
     async one(req: Request) {
         let a = await this.defaultRepository.findOne({where:{id:Number(req.params.id)}})
+        console.log(a)
         return a
 
     }
@@ -55,5 +56,31 @@ export class ClasseController {
         return classeSave
     }
     
+    @Get('/Classes/delete/:id')
+    async delete(req:Request) {
+        let a = await this.defaultRepository.findOne({where:{id:Number(req.params.id)}})
+        if(!a) throw new Error('Classe não encontrado')
+        
+        let response = await this.defaultRepository.remove(a)
+        
+        return response
+
+    }
+
+    @Post('/Classes/update')
+    async update(req:Request) {
+        let a = await this.defaultRepository.findOne({where:{id:Number(req.body.id)}})
+        if(!a) throw new Error('Classe não encontrado')
+
+        a.descricaoClasse = req.body.descricaoClasse
+        a.quantidadeAlunos = Number(req.body.quantidadeAlunos)
+        a.quantidadeAlunosEspeciais = Number(req.body.quantidadeAlunosEspeciais)
+        a.codigoCurso = Number(req.body.codigoCurso)
+
+        let response = await this.defaultRepository.save(a)
+        return response
+
+    }
+
 
 }

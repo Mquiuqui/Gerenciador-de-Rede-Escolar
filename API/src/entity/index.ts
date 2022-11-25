@@ -8,7 +8,6 @@ import { Classe } from "./Classe"
 import { Curso } from "./Curso"
 import { Departamento } from "./Departamento"
 import { Disciplina } from "./Disciplina"
-import { Estoque } from "./Estoque"
 import { Funcionario } from "./Funcionario"
 import { GrupoAcesso } from "./GrupoAcesso"
 import { Nota } from "./Nota"
@@ -16,7 +15,8 @@ import { Ocorrencia } from "./Ocorrencia"
 import { Parametros } from "./Parametros"
 import { Professor } from "./Professor"
 import { Turno } from "./Turno"
-import { UnidadadeEscolar } from "./UnidadadeEscolar"
+import { UnidadeEscolar } from "./UnidadeEscolar"
+
 
 
 export const Tables = {
@@ -33,8 +33,7 @@ export const Tables = {
         yield Curso
         yield GrupoAcesso
         yield Aluno
-        yield UnidadadeEscolar
-        yield Estoque
+        yield UnidadeEscolar
         yield Turno
         yield Administracao
         yield Parametros

@@ -5,6 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from "typeorm";
 import { Disciplina } from "./Disciplina";
 import { Professor } from "./Professor";
@@ -14,7 +15,7 @@ import { Nota } from "./Nota";
 @Index("FOREIGNKEY_ATIVIDADE_PROFESSOR_idx", ["idProfessor"], {})
 @Entity("atividade", { schema: "prjescola" })
 export class Atividade {
-  @Column("int", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("varchar", { name: "Titulo_Atividade", nullable: true, length: 30 })

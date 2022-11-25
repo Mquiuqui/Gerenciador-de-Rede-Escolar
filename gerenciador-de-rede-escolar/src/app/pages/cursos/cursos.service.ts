@@ -14,5 +14,8 @@ export class CursosService {
     getCursos() {
         return this.http.get<IApiReturn<any>>(`http://localhost:3333/Cursos`)
     }
+    deleteCurso(id) {
+        return this.http.get<IApiReturn<any>>(`http://localhost:3333/Cursos/delete/${id}`)
+    }
 
 }

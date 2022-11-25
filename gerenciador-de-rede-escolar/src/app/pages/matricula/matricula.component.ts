@@ -36,14 +36,15 @@ export class MatriculaComponent implements OnInit {
         let data = {
 
             nomeAluno: evt.target[0].value,
-            emailAluno: evt.target[1].value,
-            telefone: evt.target[2].value,
-            codigoCurso: evt.target[8].value,
-            sexoAluno: evt.target[7].value,
-            endereco: evt.target[5].value,
-            senhaAluno: evt.target[12].value,
-            rgAluno: evt.target[3].value,
-            cpfAluno: evt.target[4].value,
+            dtNasc: evt.target[1].value,
+            emailAluno: evt.target[2].value,
+            telefone: evt.target[3].value,
+            codigoCurso: evt.target[9].value,
+            sexoAluno: evt.target[8].value,
+            endereco: evt.target[6].value,
+            senhaAluno: evt.target[13].value,
+            rgAluno: evt.target[4].value,
+            cpfAluno: evt.target[5].value,
         }
 
         try {
@@ -52,13 +53,13 @@ export class MatriculaComponent implements OnInit {
                 alert(response.listaMensagens[0])
                 return
             }
-
-            this.rota.navigate(['home'])
+            alert('Matricula Enviada com Sucesso!')
+            this.rota.navigate(['/home'])
 
 
         } catch (error) {
 
-            this.flash.show(error.error.listaMensagens[0], 'error')
+            alert(error.error.listaMensagens[0])
         }
 
 

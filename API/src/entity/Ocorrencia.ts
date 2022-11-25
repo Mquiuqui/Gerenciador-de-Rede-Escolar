@@ -9,8 +9,8 @@ import {
 import { Aluno } from "./Aluno";
 import { Professor } from "./Professor";
 
-@Index("ID_Professor", ["idProfessor"], {})
 @Index("RGM_Aluno", ["rgmAluno"], {})
+@Index("ID_Professor", ["idProfessor"], {})
 @Entity("ocorrencia", { schema: "prjescola" })
 export class Ocorrencia {
   @PrimaryGeneratedColumn({ type: "int", name: "id" })

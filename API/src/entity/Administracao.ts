@@ -1,9 +1,9 @@
-import { Column, Entity, OneToMany } from "typeorm";
-import { UnidadadeEscolar } from "./UnidadadeEscolar";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { UnidadeEscolar } from "./UnidadeEscolar";
 
 @Entity("administracao", { schema: "prjescola" })
 export class Administracao {
-  @Column("int", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("varchar", { name: "Nome", length: 45 })
@@ -13,8 +13,8 @@ export class Administracao {
   cargo: string;
 
   @OneToMany(
-    () => UnidadadeEscolar,
-    (unidadadeEscolar) => unidadadeEscolar.administrador2
+    () => UnidadeEscolar,
+    (unidadeEscolar) => unidadeEscolar.administrador2
   )
-  unidadadeEscolars: UnidadadeEscolar[];
+  unidadeEscolars: UnidadeEscolar[];
 }

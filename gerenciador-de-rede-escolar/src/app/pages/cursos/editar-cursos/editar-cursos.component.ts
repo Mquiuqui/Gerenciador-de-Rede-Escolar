@@ -13,7 +13,10 @@ export class EditarCursosComponent implements OnInit {
 
     rota: Router
     periodos: any[]
+    periodoSelected
+    unidadeSelected
     unidades: any[]
+    curso: any
     constructor(
         private rotaAtivada: ActivatedRoute,
         private route: Router,
@@ -28,8 +31,19 @@ export class EditarCursosComponent implements OnInit {
     }
 
     async load() {
+        this.rotaAtivada.params.subscribe(async data => {
+            let response = (await lastValueFrom(this.service.getCurso(data['id'])))
+            if (response.flagErro) {
+                this.flash.show(response.listaMensagens[0], 'error')
+                return
+            }
+            this.curso = response.listaResultados
+        })
         this.periodos = (await lastValueFrom(this.service.getPeriodo())).listaResultados
+        this.periodoSelected = this.periodos.find(periodo => periodo.id == this.curso.idTurno).id
         this.unidades = (await lastValueFrom(this.service.getUnidades())).listaResultados
+        this.unidadeSelected = this.unidades.find(unidade => unidade.id == this.curso.idEscola).id
+        console.log(this.unidadeSelected, this.periodoSelected)
     }
 
     async submit(evt: any) {

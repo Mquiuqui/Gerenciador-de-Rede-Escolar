@@ -34,8 +34,8 @@ export class Aluno {
   @Column("varchar", { name: "Telefone", nullable: true, length: 15 })
   telefone: string | null;
 
-  @Column("varchar", { name: "Raca", nullable: true, length: 15 })
-  raca: string | null;
+  @Column("varchar", { name: "Etnia", nullable: true, length: 15 })
+  etnia: string | null;
 
   @Column("varchar", { name: "Bolsa", nullable: true, length: 10 })
   bolsa: string | null;
@@ -63,6 +63,9 @@ export class Aluno {
 
   @Column("varchar", { name: "Sexo_Aluno", nullable: true, length: 45 })
   sexoAluno: string | null;
+
+  @Column("date", { name: "Data de Nascimento", nullable: true })
+  dataDeNascimento: string | null;
 
   @ManyToOne(() => GrupoAcesso, (grupoAcesso) => grupoAcesso.alunos, {
     onDelete: "NO ACTION",

@@ -5,20 +5,21 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from "typeorm";
 import { Atividade } from "./Atividade";
 import { Disciplina } from "./Disciplina";
 import { Ocorrencia } from "./Ocorrencia";
 import { Curso } from "./Curso";
 import { Funcionario } from "./Funcionario";
-import { UnidadadeEscolar } from "./UnidadadeEscolar";
+import { UnidadeEscolar } from "./UnidadeEscolar";
 
 @Index("FOREIGNKEY_PROFESSOR_UE_idx", ["idEscola"], {})
 @Index("FOREIGNKEY_PROFESSOR_CURSO_idx", ["codigoCurso"], {})
 @Index("FOREIGNKEY_PROFESSOR_FUNCIONARIO_idx", ["idFuncionario"], {})
 @Entity("professor", { schema: "prjescola" })
 export class Professor {
-  @Column("int", { primary: true, name: "id" })
+  @PrimaryGeneratedColumn({ type: "int", name: "id" })
   id: number;
 
   @Column("varchar", { name: "Nome_Professor", nullable: true, length: 50 })
@@ -57,10 +58,10 @@ export class Professor {
   idFuncionario2: Funcionario;
 
   @ManyToOne(
-    () => UnidadadeEscolar,
-    (unidadadeEscolar) => unidadadeEscolar.professors,
+    () => UnidadeEscolar,
+    (unidadeEscolar) => unidadeEscolar.professors,
     { onDelete: "NO ACTION", onUpdate: "NO ACTION" }
   )
   @JoinColumn([{ name: "ID_Escola", referencedColumnName: "id" }])
-  idEscola2: UnidadadeEscolar;
+  idEscola2: UnidadeEscolar;
 }
