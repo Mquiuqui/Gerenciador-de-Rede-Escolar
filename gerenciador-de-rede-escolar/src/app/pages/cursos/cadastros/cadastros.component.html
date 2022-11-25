@@ -8,17 +8,7 @@
 
             <div class="col-md-12">
               <input class="form-control" type="text" name="nome" placeholder="Titulo do Curso: " required>
-              <!-- <div class="valid-feedback">Username field is valid!</div>
-                           <div class="invalid-feedback">Username field cannot be blank!</div> -->
             </div>
-
-            <!-- <div class="col-md-12">
-              <select class="form-select mt-3" required>
-                <option selected disabled value="">Modalidae do Curso: </option>
-                <option value="1">Integral</option>
-                <option value="2">Parcial</option>
-              </select>
-            </div> -->
 
             <div class=" col-md-12 d-flex flex-column mt-4">
               <label>Periodo Desejado: </label>
@@ -33,11 +23,6 @@
                 <option *ngFor=" let unidade of unidades" value={{unidade.id}}>{{unidade.nomeEscola}}</option>
               </select>
             </div>
-            <!-- <div class="col-md-12">
-                <input class="form-control" type="password" name="password" placeholder="Password" required>
-                <div class="valid-feedback">Password field is valid!</div>
-                <div class="invalid-feedback">Password field cannot be blank!</div>
-              </div> -->
 
             <div class="confirmar form-button mt-3 d-flex justify-content-center">
               <button id="submit" type="submit" class="btn btn-primary">Cadastrar</button>

@@ -33,10 +33,11 @@ export class LoginComponent implements OnInit {
 
   async submit() {
 
-    if (!this.user.username || !this.user.senha) console.log("teste")
-    console.log(this.user)
+    if (this.user.username === '' || this.user.senha === '') {
+      this.flashMessageService.show('Preencha todos os campos', 'error');
+      return
+    }
     const user = await this.accountService.login(this.user.username, this.user.senha)
-    console.log(user)
     if (user.flagErro) this.flashMessageService.show(user.listaMensagens[0], 'error');
     if(!user.flagErro) this.router.navigate(['home'])
     
@@ -45,7 +46,6 @@ export class LoginComponent implements OnInit {
   async submitFuncionario() {
 
     const user = await this.accountService.loginFuncionario(this.user.username, this.user.senha)
-    console.log(user)
     if (user.flagErro) this.flashMessageService.show(user.listaMensagens[0], 'error');
     if(!user.flagErro) this.router.navigate(['home'])
     

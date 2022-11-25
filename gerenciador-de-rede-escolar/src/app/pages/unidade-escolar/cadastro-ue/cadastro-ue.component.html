@@ -4,7 +4,7 @@
       <div class="form-content">
         <div class="form-items">
           <h3>Cadastro de Unidade Escolar</h3>
-          <form class="requires-validation" (submit)="this.submit($event)" novalidate>
+          <form ngNativeValidate class="requires-validation" (submit)="this.submit($event)">
 
             <div class="col-md-12">
               <input class="form-control" type="text" name="nome" placeholder="Nome da Unidade" required>
@@ -14,6 +14,7 @@
 
             <div class="col-md-12">
               <input class="form-control" type="text" name="endereco" placeholder="Endereço da Unidade" required>
+              <br>
               <input class="form-control" type="number" name="endnum" placeholder="Nº" [defaultValue]="" required>
               <!-- <div class="valid-feedback">Email field is valid!</div>
                            <div class="invalid-feedback">Email field cannot be blank!</div> -->

@@ -24,6 +24,23 @@ html{
     scroll-behavior: smooth;
 }
 
+input.error,
+select.error,
+textarea.error {
+    background-color: rgb(253 242 242 / var(--tw-bg-opacity)) !important;
+    border-color: rgb(240 82 82 / var(--tw-border-opacity)) !important;
+
+    color: rgb(119 29 29 / var(--tw-text-opacity)) !important;
+}
+
+p.error-message {
+    display: none;
+}
+
+p.error-message.error {
+    display: block;
+}
+
 .fs-54{
     font-size: 54pt;
 }

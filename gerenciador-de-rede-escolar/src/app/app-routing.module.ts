@@ -31,13 +31,14 @@ import { UnidadeEscolarComponent } from './pages/unidade-escolar/unidade-escolar
 import { VisualizarBoletosComponent } from './pages/visualizar-boletos/visualizar-boletos.component';
 import { ChamadaComponent } from './pages/disciplinas/chamada/chamada.component';
 import { ListarChamadaComponent } from './pages/disciplinas/chamada/listar-chamada/listar-chamada.component';
+import { EditarUeComponent } from './pages/unidade-escolar/editar-ue/editar-ue.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'', component: LandingPageComponent},
 
   {path:'home', component: HomeComponent, canActivate:[AuthGuard]},
-  {path:'contato', component: ContatoComponent, canActivate:[AuthGuard]},
+  {path:'contato', component: ContatoComponent},
   {path:'perfil_editar', component: PerfilComponent, canActivate:[AuthGuard]},
 
   {path:'matricula', component: MatriculaComponent},
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path:'unidade_escolar', component: UnidadeEscolarComponent, canActivate:[AuthGuard]},
   {path:'cadastroUE', component: CadastroUeComponent, canActivate:[AuthGuard]},
   {path: 'listar_unidades', component: ListarUnidadeEscolarComponent, canActivate:[AuthGuard]},
+  {path: 'editar-ue/:id', component: EditarUeComponent, canActivate:[AuthGuard]},
 
   {path:'ano_letivo', component: AnoLetivoComponent, canActivate:[AuthGuard]},
   {path:'cadastro_ano_letivo', component: CadastroAnoLetivoComponent, canActivate:[AuthGuard]},

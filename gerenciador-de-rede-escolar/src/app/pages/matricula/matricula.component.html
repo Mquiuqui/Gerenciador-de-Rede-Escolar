@@ -4,14 +4,14 @@
       <div class="form-content">
         <div class="form-items">
           <h3>Matricula</h3>
-          <form (submit)="this.submit($event)" class="requires-validation" novalidate>
+          <form ngNativeValidate (submit)="this.submit($event)">
 
             <div class="col-md-12">
               <input class="form-control" type="text" name="nome" placeholder="Nome Completo: " required>
               <input class="form-control" type="text" name="nome" placeholder="Email: " required>
-              <input class="form-control" type="number" name="nome" placeholder="Telefone: " required>
-              <input class="form-control" type="number" name="nome" placeholder="RG: " required>
-              <input class="form-control" type="number" name="nome" placeholder="CPF: " required>
+              <input class="form-control" type="text" name="nome" placeholder="Telefone: " required mask="(00) 0000-0000">
+              <input class="form-control" type="text" name="nome" placeholder="RG: " required mask="00.000.000-00">
+              <input class="form-control" type="text" name="nome" placeholder="CPF: " required mask="000.000.000-00">
               <input class="form-control" type="text" name="nome" placeholder="Endereço: " required>
               <input class="form-control" type="number" name="nome" placeholder="Num Endereço: " required>
 
