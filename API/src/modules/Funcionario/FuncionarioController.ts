@@ -65,7 +65,7 @@ export class FuncionarioController {
         novoFuncionario.salario = req.body.salario
         novoFuncionario.cargo = req.body.cargo
         novoFuncionario.codigoDepartamento = req.body.codigoDepartamento
-        if(req.body.flagProfessor) novoFuncionario.codigoDepartamento = 3
+        if(req.body.flagProfessor) novoFuncionario.codigoDepartamento = 2
         
         let funcionarioNovo =  await this.defaultRepository.save(novoFuncionario)
 

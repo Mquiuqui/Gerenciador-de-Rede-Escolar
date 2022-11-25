@@ -25,11 +25,11 @@ export class HomeComponent implements OnInit {
         console.log(this.user.userValue.idAcesso)
         this.AcessoId = this.user.userValue.idAcesso ? this.user.userValue.idAcesso : this.user.userValue.codigoDepartamento2.idAcesso
 
-        setTimeout(() => {
-            if (this.user.userValue.ocorrencias.length > 0) {
-                alert('Você possui: ' + this.user.userValue.ocorrencias.length + ' ocorrências')
-            }
-        }, 2000)
+        // setTimeout(() => {
+        //     if (this.user.userValue.ocorrencias.length > 0) {
+        //         alert('Você possui: ' + this.user.userValue.ocorrencias.length + ' ocorrências')
+        //     }
+        // }, 2000)
 
     }
 
